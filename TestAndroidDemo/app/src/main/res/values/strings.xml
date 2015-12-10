@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">TestAndroidDemo</string>
+    <string name = "baseservice_test">BaseService方法test测试</string>
+    <string name = "baseservice_testperson">BaseService方法testPerson测试</string>
+    <string name = "baseservice_downloadimage">BaseService方法downloadImage测试</string>
+    <string name = "baseservice_getperson">BaseService方法getPersonTest测试</string>
+    <string name = "baseservice_testin">BaseService方法getPersonIn测试</string>
+    <string name = "baseservice_testout">BaseService方法getPersonOut测试</string>
+    <string name = "baseservice_testinout">BaseService方法getPersonInOut测试</string>
+    <string name = "view_demo_show">各种自定义控件demo演示界面</string>
+    <string name = "list_refresh_show">自定义list实现下拉刷新</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
