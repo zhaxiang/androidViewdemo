@@ -8,7 +8,9 @@
     <string name = "baseservice_testout">BaseService方法getPersonOut测试</string>
     <string name = "baseservice_testinout">BaseService方法getPersonInOut测试</string>
     <string name = "view_demo_show">各种自定义控件demo演示界面</string>
-    <string name = "list_refresh_show">自定义list实现下拉刷新</string>
+    <string name = "list_refresh_show">自定义list实现上拉加载下拉刷新</string>
+    <string name = "volley_interface_show">volley框架演示</string>
+    <string name = "volley_imageview_update">volley框架演示图片下载完刷新</string>
 
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

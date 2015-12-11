@@ -1,8 +1,11 @@
 package com.example.administrator.fragment;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+
+import com.example.administrator.testandroiddemo.R;
 
 /**
  * Created by Administrator on 2015/12/7.
@@ -10,42 +13,59 @@ import android.app.FragmentTransaction;
 public class CustomerFragmentManager
 {
     private FragmentManager fragmentManager = null;
-    private FragmentTransaction fragmentTransaction = null;
+    private Activity mActivity = null;
     private int fragmentContent;
-    private static CustomerFragmentManager customerFragmentManager = null;
 
-    CustomerFragmentManager forContainer()
+    public static CustomerFragmentManager forContainer(Activity activity, int contentId, FragmentManager fragmentManager)
     {
-        if(null == customerFragmentManager)
+         return new CustomerFragmentManager(activity, contentId, fragmentManager);
+    }
+
+    CustomerFragmentManager(Activity activity, int contentId, FragmentManager fragmentManager)
+    {
+        this.mActivity = activity;
+        fragmentContent = contentId;
+        if(fragmentManager == null)
         {
-            customerFragmentManager = new CustomerFragmentManager();
+            this.fragmentManager = activity.getFragmentManager();
         }
-        return customerFragmentManager;
-    };
+        else
+        {
+            this.fragmentManager = fragmentManager;
+        }
 
-    CustomerFragmentManager()
-    {
-        if(fragmentManager == null);
 
-    };
+    }
 
     void initFragmentContent(int id)
     {
         fragmentContent = id;
-    };
+    }
 
     void setFragmentContent(int id)
     {
         fragmentContent = id;
-    };
+    }
 
     int getFragmentContent()
     {
         return fragmentContent;
     }
 
-    void replace(Fragment fragment)
+    Activity getFramentContentActivity(){return mActivity;}
+
+    public void replaceFragment(Fragment fragment, boolean isAddToBack)
     {
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
         fragmentTransaction.replace(fragmentContent, fragment);
+        if(isAddToBack)
+            fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
     };
+
+    public boolean popFragment()
+    {
+        return fragmentManager.popBackStackImmediate();
+    }
 }

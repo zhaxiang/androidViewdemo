@@ -2,7 +2,9 @@ package com.example.administrator.fragment;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,6 +12,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.administrator.activity.BaseActivity;
 
 public abstract class BaseFragment extends Fragment
 {
@@ -120,5 +124,37 @@ public abstract class BaseFragment extends Fragment
     {
         super.onDetach();
         Log.v(TAG, "onDetach");
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    public void replaceFragment(Fragment fragment, boolean isAddToStack)
+    {
+        if(this.getActivity() == null)
+        {
+            throw new IllegalStateException("getActivity is null");
+        }
+
+        CustomerFragmentManager customerFragmentManager = ((BaseActivity) this.getActivity()).getCustomerFragmentManager();
+        if(null != customerFragmentManager)
+        {
+            Log.v(TAG, "replaceFragment null != customerFragmentManager");
+            customerFragmentManager.replaceFragment(fragment, isAddToStack);
+        }
+    }
+
+    public void popFragment()
+    {
+        if(this.getActivity() == null)
+        {
+            throw new IllegalStateException("getActivity is null");
+        }
+        CustomerFragmentManager customerFragmentManager = ((BaseActivity) this.getActivity()).getCustomerFragmentManager();
+        if(null != customerFragmentManager)
+            customerFragmentManager.popFragment();
     }
 }

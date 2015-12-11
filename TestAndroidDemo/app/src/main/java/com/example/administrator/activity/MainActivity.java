@@ -152,6 +152,7 @@ public class MainActivity extends AppCompatActivity//AppCompatActivity中实现�
         Log.v(TAG, "onResume");
         //第一次初始化，启动service后台获取所有应用
         BaseApplication.application.getServiceManager();
+        BaseApplication.application.getVolleyManager();
         super.onResume();
     }
 }

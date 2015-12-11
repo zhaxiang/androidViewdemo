@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.example.administrator.testandroiddemo.service.ServiceManager;
+import com.example.administrator.volley.VolleyManager;
 
 
 /**
@@ -38,7 +39,6 @@ public class BaseApplication extends Application
 //        {
 //            getServiceManager();
 //        }
-
 
     }
           //退出时调用，不一定被调用
@@ -78,6 +78,11 @@ public class BaseApplication extends Application
     public ServiceManager getServiceManager()
     {
         return ServiceManager.getInstance(this.getApplicationContext());
+    }
+
+    public VolleyManager getVolleyManager()
+    {
+        return VolleyManager.getInstance(this.getApplicationContext());
     }
 
     /**

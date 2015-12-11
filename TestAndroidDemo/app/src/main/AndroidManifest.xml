@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.administrator.testandroiddemo"
-      android:versionCode="1"
-      android:versionName="1.0.0">
+    android:versionCode="1"
+    android:versionName="1.0.0" >
 
     <uses-sdk
         android:minSdkVersion="14"
-        android:targetSdkVersion="21"/>
+        android:targetSdkVersion="21" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name="com.example.administrator.BaseApplication"
@@ -39,12 +45,15 @@
             android:screenOrientation="portrait" >
         </activity>
 
-        <service android:name=".service.LocalService">
+        <service android:name=".service.LocalService" >
         </service>
         <service
             android:name=".service.BaseService"
             android:process="com.example.administrator.testandroiddemo.base" >
         </service>
+
+        <activity android:name="com.example.administrator.activity.BaseActivity" >
+        </activity>
     </application>
 
 </manifest>

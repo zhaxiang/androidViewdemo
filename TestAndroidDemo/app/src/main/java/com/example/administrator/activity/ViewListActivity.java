@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.administrator.BaseApplication;
+import com.example.administrator.data.Constants;
 import com.example.administrator.testandroiddemo.R;
 
 /**
@@ -19,6 +20,7 @@ public class ViewListActivity extends AppCompatActivity implements View.OnClickL
 {
     private final String TAG = ViewListActivity.class.getSimpleName();
     private Button listBtn = null;
+    private Button volleyBtn = null;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -27,20 +29,28 @@ public class ViewListActivity extends AppCompatActivity implements View.OnClickL
 
         listBtn = (Button)findViewById(R.id.list_show);
         listBtn.setOnClickListener(this);
+
+        volleyBtn = (Button)findViewById(R.id.volley_show);
+        volleyBtn.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v)
     {
-        String tagName;
+        String tagName = "";
         if(v == listBtn)
         {
             Log.v(TAG, "listBtn");
-            Intent intent = new Intent(ViewListActivity.this, ShowDemoActivity.class);
-            startActivity(intent);
-            tagName = "ListFragment";
-            BaseApplication.application.setFragmentString(tagName);
+            tagName = Constants.ListFragment;
         }
+        else if(v == volleyBtn)
+        {
+            Log.v(TAG, "volleyBtn");
+            tagName = Constants.VolleyFragment;
+        }
+        BaseApplication.application.setFragmentString(tagName);
+        Intent intent = new Intent(ViewListActivity.this, ShowDemoActivity.class);
+        startActivity(intent);
     }
 
     @Override
