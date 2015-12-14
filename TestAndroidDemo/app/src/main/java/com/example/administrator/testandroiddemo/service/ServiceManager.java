@@ -10,6 +10,7 @@ import android.util.Log;
 
 import com.example.administrator.data.AppInfo;
 import com.example.administrator.data.Person;
+import com.example.administrator.volley.VolleyManager;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -92,7 +93,7 @@ public class ServiceManager
             Log.v(TAG, "mLocalConnection onServiceConnected");
             isLocalBind = true;
             mLocalService = ((LocalService.LocalBinder)service).getLocalService();
-            initImageLoader();
+            getImageLoader();
         }
 
         @Override
@@ -313,11 +314,12 @@ public class ServiceManager
         return mAppInfos;
     }
 
-    public void initImageLoader()
+    public VolleyManager getImageLoader()
     {
         if(isLocalBind && null != mLocalService)
         {
-            mLocalService.initImageLoader();
+            return mLocalService.getImageLoader();
         }
+        return null;
     }
 }

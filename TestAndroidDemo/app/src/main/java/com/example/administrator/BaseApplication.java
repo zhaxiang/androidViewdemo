@@ -82,7 +82,7 @@ public class BaseApplication extends Application
 
     public VolleyManager getVolleyManager()
     {
-        return VolleyManager.getInstance(this.getApplicationContext());
+        return getServiceManager().getImageLoader();
     }
 
     /**

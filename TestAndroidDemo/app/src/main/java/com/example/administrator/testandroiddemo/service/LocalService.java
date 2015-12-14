@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.example.administrator.data.Constants;
+import com.example.administrator.volley.VolleyManager;
 
 /**
  * Created by Administrator on 2015/12/9.
@@ -61,8 +62,8 @@ public class LocalService extends Service
         return super.onUnbind(intent);
     }
 
-    public void initImageLoader()
+    public VolleyManager getImageLoader()
     {
-        Log.v(TAG, "initImageLoader");
+        return VolleyManager.getInstance(this);
     }
 }

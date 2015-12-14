@@ -21,4 +21,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
        layout="@layout/auto_list_item"/>
+
+    <com.example.administrator.view.AutoListView
+        android:id="@+id/volleyList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dip">
+    </com.example.administrator.view.AutoListView>
 </LinearLayout>

@@ -150,6 +150,7 @@ public class MainActivity extends AppCompatActivity//AppCompatActivity中实现�
     protected void onResume()
     {
         Log.v(TAG, "onResume");
+        Log.v(TAG, "onResume mainThread id = " + Thread.currentThread().getId());
         //第一次初始化，启动service后台获取所有应用
         BaseApplication.application.getServiceManager();
         BaseApplication.application.getVolleyManager();

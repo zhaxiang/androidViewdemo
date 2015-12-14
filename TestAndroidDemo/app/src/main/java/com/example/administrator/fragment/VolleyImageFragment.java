@@ -8,12 +8,19 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.administrator.BaseApplication;
+import com.example.administrator.data.AppInfo;
 import com.example.administrator.data.Constants;
+import com.example.administrator.fragment.adapter.AppInfoAdapter;
 import com.example.administrator.testandroiddemo.R;
+import com.example.administrator.view.AutoListView;
+
+import java.util.ArrayList;
 
 /**
  * Created by Administrator on 2015/12/11.
@@ -32,6 +39,9 @@ public class VolleyImageFragment extends BaseFragment
     private TextView textView3 = null;
     private TextView textView4 = null;
 
+    private AutoListView listView;
+    private AppInfoAdapter appInfoAdapter;
+
     @Override
     protected void findViews(View v)
     {
@@ -44,6 +54,8 @@ public class VolleyImageFragment extends BaseFragment
         textView2 = (TextView)(v.findViewById(R.id.secondItem)).findViewById(R.id.appNameLabel);
         textView3 = (TextView)(v.findViewById(R.id.thirdItem)).findViewById(R.id.appNameLabel);
         textView4 = (TextView)(v.findViewById(R.id.fourthItem)).findViewById(R.id.appNameLabel);
+
+        listView = (AutoListView)v.findViewById(R.id.volleyList);
     }
 
     @Override
@@ -53,6 +65,30 @@ public class VolleyImageFragment extends BaseFragment
         BaseApplication.application.getVolleyManager().getImageByUrl(Constants.imageUrl[1], imageView2);
         BaseApplication.application.getVolleyManager().getImageByUrl(Constants.imageUrl[2], imageView3);
         BaseApplication.application.getVolleyManager().getImageByUrl(Constants.imageUrl[3], imageView4);
+
+        ArrayList<AppInfo> infos = new ArrayList<AppInfo>();
+
+        for(int i = 0; i < 40; i++)
+        {
+            AppInfo info = new AppInfo();
+            String url = "http://img1.3lian.com/img2011/w10/1019/5/" + (i + 1) + ".jpg";
+            info.setAppUrl(url);
+            info.setAppName(String.valueOf(i));
+            infos.add(info);
+        }
+
+        appInfoAdapter = new AppInfoAdapter(getActivity(), infos);
+        listView.setAdapter(appInfoAdapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+            {
+                Log.v(TAG, "position =" + position);
+                Toast.makeText(getActivity().getApplicationContext(), "current item pos index = " + position, Toast.LENGTH_SHORT).show();
+                BaseApplication.application.getVolleyManager().XMLRequest();
+                BaseApplication.application.getVolleyManager().JsonObjectRequestByGet();
+            }
+        });
     }
 
     @Override
@@ -65,6 +101,13 @@ public class VolleyImageFragment extends BaseFragment
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        if(null !=  appInfoAdapter)
+        {
+            if(appInfoAdapter.getInfos().size() > 0)
+            {
+                Log.v(TAG, "onCreate size > 0");
+            }
+        }
     }
 
     @Nullable

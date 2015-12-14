@@ -149,7 +149,7 @@ public class BaseService extends Service
                 PackageInfo packageInfo = packages.get(i);
                 String path = SaveBitmapToFile(drawableToBitmap(packageInfo.applicationInfo.loadIcon(getPackageManager())), packageInfo.packageName);
                 AppInfo tmpInfo =new AppInfo(packageInfo.applicationInfo.loadLabel(getPackageManager()).toString(),
-                        packageInfo.packageName,packageInfo.versionName,packageInfo.versionCode, path);
+                        packageInfo.packageName,packageInfo.versionName,packageInfo.versionCode, path, null);
                 appList.add(tmpInfo);
 
             }

@@ -14,6 +14,7 @@ public class AppInfo implements Parcelable
     private String  versionName = "";
     private int versionCode = 0;
     private String appIconPath = null;
+    private String appUrl = null;
 
     protected AppInfo(Parcel in)
     {
@@ -22,6 +23,7 @@ public class AppInfo implements Parcelable
         versionName = in.readString();
         versionCode = in.readInt();
         appIconPath = in.readString();
+        appUrl = in.readString();
     }
 
     public AppInfo(AppInfo info)
@@ -31,6 +33,7 @@ public class AppInfo implements Parcelable
         this.versionName = info.versionName;
         this.versionCode = info.versionCode;
         this.appIconPath = info.appIconPath;
+        this.appUrl = info.appUrl;
     }
 
     public static final Creator<AppInfo> CREATOR = new Creator<AppInfo>()
@@ -62,17 +65,19 @@ public class AppInfo implements Parcelable
         dest.writeString(versionName);
         dest.writeInt(versionCode);
         dest.writeString(appIconPath);
+        dest.writeString(appUrl);
     }
 
     public AppInfo() {}
 
-    public AppInfo(String appName, String packageName, String versionName, int versionCode, String appIcon)
+    public AppInfo(String appName, String packageName, String versionName, int versionCode, String appIcon, String appUrl)
     {
         this.appName = appName;
         this.packageName = packageName;
         this.versionName = versionName;
         this.versionCode = versionCode;
         this.appIconPath = appIcon;
+        this.appUrl = appUrl;
     }
     public String getAppName()
     {
@@ -122,5 +127,15 @@ public class AppInfo implements Parcelable
     public void setAppIconPath(String appIconPath)
     {
         this.appIconPath = appIconPath;
+    }
+
+    public String getAppUrl()
+    {
+        return appUrl;
+    }
+
+    public void setAppUrl(String appUrl)
+    {
+        this.appUrl = appUrl;
     }
 }

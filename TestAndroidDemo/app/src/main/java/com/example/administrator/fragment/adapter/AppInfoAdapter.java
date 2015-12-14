@@ -10,6 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.administrator.BaseApplication;
 import com.example.administrator.data.AppInfo;
 import com.example.administrator.testandroiddemo.R;
 
@@ -76,18 +77,31 @@ public class AppInfoAdapter extends BaseAdapter
             infoItem = (AppInfoItem)convertView.getTag();
         }
 
-        //绑定数据
-        String path = infos.get(position).getAppIconPath();
-        if(!path.equals(""))
+        String url = infos.get(position).getAppUrl();
+        if(null != url)
         {
-            Bitmap iconBm = BitmapFactory.decodeFile(path);
-            if(null != iconBm)
-                infoItem.imageView.setImageBitmap(iconBm);
+            if(!url.equals(""))
+                BaseApplication.application.getVolleyManager().getImageByUrl(url, infoItem.imageView);
         }
         else
         {
-            infoItem.imageView.setImageResource(R.mipmap.ic_launcher);
+            //绑定数据
+            String path = infos.get(position).getAppIconPath();
+            if(null != path)
+            {
+                if(!path.equals(""))
+                {
+                    Bitmap iconBm = BitmapFactory.decodeFile(path);
+                    if(null != iconBm)
+                        infoItem.imageView.setImageBitmap(iconBm);
+                }
+            }
+            else
+            {
+                infoItem.imageView.setImageResource(R.mipmap.ic_launcher);
+            }
         }
+
         infoItem.textView.setText(infos.get(position).getAppName());
 
         return convertView;
