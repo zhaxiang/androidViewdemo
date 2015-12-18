@@ -17,5 +17,6 @@ public class Constants
     public static final String APP_IMAGE = APP_DIR + "/image";
     public static final String ListFragment = "ListFragment";
     public static final String VolleyFragment = "VolleyFragment";
+    public static final String GaodeMapFragment = "GaodeMapFragment";
     public static final String FRAGMENT_LIST[] = {ListFragment, VolleyFragment};
 }

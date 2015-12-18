@@ -10,6 +10,7 @@ import android.util.Log;
 import com.example.administrator.BaseApplication;
 import com.example.administrator.data.Constants;
 import com.example.administrator.fragment.CustomerFragmentManager;
+import com.example.administrator.fragment.GaodeMapFragment;
 import com.example.administrator.fragment.VolleyFragment;
 import com.example.administrator.testandroiddemo.R;
 import com.example.administrator.fragment.ListDemoFragment;
@@ -45,6 +46,12 @@ public class ShowDemoActivity extends BaseActivity
             titleId = R.string.volley_interface_show;
             showVolleyFragment();
         }
+        else if(currentFragment == Constants.GaodeMapFragment)
+        {
+            titleId = R.string.map_gaode;
+            showGaodeMapFragment();
+
+        }
         this.getSupportActionBar().setTitle(titleId);
     }
 
@@ -58,6 +65,11 @@ public class ShowDemoActivity extends BaseActivity
     {
         Log.v(TAG, "showVolleyFragment");
         replaceFragment(new VolleyFragment(), false);
+    }
+    private void showGaodeMapFragment()
+    {
+        Log.v(TAG, "showGaodeMapFragment");
+        replaceFragment(new GaodeMapFragment(), false);
     }
 
     @Override

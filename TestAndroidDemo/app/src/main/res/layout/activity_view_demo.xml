@@ -24,11 +24,17 @@
             android:text="@string/volley_interface_show"
             android:layout_below="@+id/list_show"/>
         <Button
+            android:id="@+id/gaoDeDitu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/map_gaode"
+            android:layout_below="@+id/volley_show"/>
+        <Button
             android:id="@+id/next"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="next_null"
-            android:layout_below="@+id/volley_show"/>
+            android:layout_below="@+id/gaoDeDitu"/>
     </RelativeLayout>
 </ScrollView>
 </RelativeLayout>

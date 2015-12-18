@@ -12,6 +12,19 @@
     <string name = "volley_interface_show">volley框架演示</string>
     <string name = "volley_imageview_update">volley框架演示图片下载完刷新</string>
 
+
+
+    <string name = "map_gaode">高德地图框架演示</string>
+    <string name = "fail_dingwei">定位失败</string>
+    <string name = "normal_type">正常模式</string>
+    <string name = "satellite_type">跟随模式</string>
+    <string name = "rotate_type">旋转模式</string>
+    <string name = "model_shiliang">矢量模式</string>
+    <string name = "model_weixing">卫星模式</string>
+    <string name = "model_night">夜景模式</string>
+    <string name = "sign_show">标记演示</string>
+
+
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

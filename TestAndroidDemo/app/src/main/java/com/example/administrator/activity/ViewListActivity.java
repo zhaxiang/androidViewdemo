@@ -21,6 +21,7 @@ public class ViewListActivity extends AppCompatActivity implements View.OnClickL
     private final String TAG = ViewListActivity.class.getSimpleName();
     private Button listBtn = null;
     private Button volleyBtn = null;
+    private Button gaodeMapBtn = null;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -32,6 +33,10 @@ public class ViewListActivity extends AppCompatActivity implements View.OnClickL
 
         volleyBtn = (Button)findViewById(R.id.volley_show);
         volleyBtn.setOnClickListener(this);
+
+        gaodeMapBtn = (Button)findViewById(R.id.gaoDeDitu);
+        gaodeMapBtn.setOnClickListener(this);
+
     }
 
     @Override
@@ -47,6 +52,11 @@ public class ViewListActivity extends AppCompatActivity implements View.OnClickL
         {
             Log.v(TAG, "volleyBtn");
             tagName = Constants.VolleyFragment;
+        }
+        else if(v == gaodeMapBtn)
+        {
+            Log.v(TAG, "gaodeMapBtn");
+            tagName = Constants.GaodeMapFragment;
         }
         BaseApplication.application.setFragmentString(tagName);
         Intent intent = new Intent(ViewListActivity.this, ShowDemoActivity.class);
