@@ -206,7 +206,8 @@ public class ServiceManager
                 e.printStackTrace();
             }
         }
-        Log.v(TAG, "getPersonTest per.name = " + per.getName());
+        if(null != per)
+            Log.v(TAG, "getPersonTest per.name = " + per.getName());
         return per;
     }
 

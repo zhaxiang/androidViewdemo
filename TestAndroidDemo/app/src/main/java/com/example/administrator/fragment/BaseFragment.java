@@ -157,4 +157,24 @@ public abstract class BaseFragment extends Fragment
         if(null != customerFragmentManager)
             customerFragmentManager.popFragment();
     }
+
+    public void showProgressDialog(int id)
+    {
+        ((BaseActivity)this.getActivity()).showProgressDialog(id);
+    }
+
+//    public void showProgressDialog(String text)
+//    {
+//        ((BaseActivity)this.getActivity()).showProgressDialog(text);
+//    }
+//
+//    public void showProgressDialog(int id, String text)
+//    {
+//
+//    }
+
+    public void dismissProgressDialog()
+    {
+        ((BaseActivity)this.getActivity()).dissmissProgressDialog();
+    }
 }

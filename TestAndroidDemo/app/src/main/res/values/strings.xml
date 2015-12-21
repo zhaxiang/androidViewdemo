@@ -22,7 +22,22 @@
     <string name = "model_shiliang">矢量模式</string>
     <string name = "model_weixing">卫星模式</string>
     <string name = "model_night">夜景模式</string>
-    <string name = "sign_show">标记演示</string>
+    <string name = "sign_show">poi关键字演示</string>
+    <string name="input_keyword">请输入关键字</string>
+    <string name="city">城市</string>
+    <string name="search">搜索</string>
+    <string name="nextPage">下一页</string>
+    <string name="loading">正在加载中...</string>
+    <string name="edit_null">编辑框无内容</string>
+    <string name="network_error">搜索失败,请检查网络连接</string>
+    <string name = "error_key">key验证无效！</string>
+    <string name = "error_other">未知错误，请稍后重试!错误码为</string>
+    <string name="no_result">对不起，没有搜索到相关数据！</string>
+    <string name="jump_to_gaode">跳转到高德地图</string>
+    <string name="jump_to_baidu">跳转到百度地图</string>
+    <string name="uninstall_gaode">没有安装高德地图</string>
+    <string name="market">商场</string>
+    <string name="shanghai">上海</string>
 
 
 <!-- TODO: Remove or change this placeholder text -->

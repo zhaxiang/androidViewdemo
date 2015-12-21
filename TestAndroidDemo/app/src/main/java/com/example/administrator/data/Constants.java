@@ -18,5 +18,6 @@ public class Constants
     public static final String ListFragment = "ListFragment";
     public static final String VolleyFragment = "VolleyFragment";
     public static final String GaodeMapFragment = "GaodeMapFragment";
+    public static final int POI_SEARCH_NUM = 10;//地图poi搜索每页搜索显示个数
     public static final String FRAGMENT_LIST[] = {ListFragment, VolleyFragment};
 }

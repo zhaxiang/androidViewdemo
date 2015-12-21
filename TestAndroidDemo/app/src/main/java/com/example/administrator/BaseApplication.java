@@ -2,9 +2,11 @@ package com.example.administrator;
 
 import android.app.ActivityManager;
 import android.app.Application;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.text.TextUtils;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.administrator.testandroiddemo.service.ServiceManager;
 import com.example.administrator.volley.VolleyManager;
@@ -106,5 +108,20 @@ public class BaseApplication extends Application
             }
         }
         return false;
+    }
+
+    public void showToast(int id)
+    {
+        Toast.makeText(this, this.getResources().getString(id), Toast.LENGTH_SHORT).show();
+    }
+
+    public void showToast(String text)
+    {
+        Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
+    }
+
+    public void showToast(int id, String other)
+    {
+        Toast.makeText(this, this.getResources().getString(id) + other, Toast.LENGTH_SHORT).show();
     }
 }
