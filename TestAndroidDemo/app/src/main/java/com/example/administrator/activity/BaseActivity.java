@@ -45,13 +45,21 @@ public class BaseActivity extends AppCompatActivity
     public void onBackPressed()
     {
         Log.v("BaseActivity", "onBackPressed");
-        if(customerFragmentManager.popFragment())
+        if(null != customerFragmentManager)
         {
+            if(customerFragmentManager.popFragment())
+            {
+            }
+            else
+            {
+                super.onBackPressed();
+            }
         }
         else
         {
             super.onBackPressed();
         }
+
     }
 
     /**

@@ -10,6 +10,7 @@ import android.util.Log;
 import com.example.administrator.BaseApplication;
 import com.example.administrator.data.Constants;
 import com.example.administrator.fragment.CustomerFragmentManager;
+import com.example.administrator.fragment.EventBusFragment;
 import com.example.administrator.fragment.GaodeMapFragment;
 import com.example.administrator.fragment.VolleyFragment;
 import com.example.administrator.testandroiddemo.R;
@@ -52,6 +53,11 @@ public class ShowDemoActivity extends BaseActivity
             showGaodeMapFragment();
 
         }
+        else if(currentFragment == Constants.EventBusFragment)
+        {
+            titleId = R.string.event_bus_demo;
+            showEventBusFragment();
+        }
         this.getSupportActionBar().setTitle(titleId);
     }
 
@@ -70,6 +76,11 @@ public class ShowDemoActivity extends BaseActivity
     {
         Log.v(TAG, "showGaodeMapFragment");
         replaceFragment(new GaodeMapFragment(), false);
+    }
+    private void showEventBusFragment()
+    {
+        Log.v(TAG, "showEventBusFragment");
+        replaceFragment(new EventBusFragment(), false);
     }
 
     @Override

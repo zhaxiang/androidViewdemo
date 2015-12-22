@@ -30,11 +30,17 @@
             android:text="@string/map_gaode"
             android:layout_below="@+id/volley_show"/>
         <Button
+            android:id="@+id/eventBusBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/event_bus_demo"
+            android:layout_below="@+id/gaoDeDitu"/>
+        <Button
             android:id="@+id/next"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="next_null"
-            android:layout_below="@+id/gaoDeDitu"/>
+            android:layout_below="@+id/eventBusBtn"/>
     </RelativeLayout>
 </ScrollView>
 </RelativeLayout>

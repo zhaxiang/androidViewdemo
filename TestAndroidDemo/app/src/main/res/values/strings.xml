@@ -11,6 +11,7 @@
     <string name = "list_refresh_show">自定义list实现上拉加载下拉刷新</string>
     <string name = "volley_interface_show">volley框架演示</string>
     <string name = "volley_imageview_update">volley框架演示图片下载完刷新</string>
+    <string name = "volley_json_request">volley框架演示json请求数据</string>
 
 
 
@@ -38,6 +39,10 @@
     <string name="uninstall_gaode">没有安装高德地图</string>
     <string name="market">商场</string>
     <string name="shanghai">上海</string>
+
+    <string name="event_bus_demo">EventBus演示框架demo</string>
+    <string name = "jump_to_otheractivity">跳转到其他activity</string>
+    <string name = "use_eventbus_post">使用EventBus发送消息进行演示</string>
 
 
 <!-- TODO: Remove or change this placeholder text -->

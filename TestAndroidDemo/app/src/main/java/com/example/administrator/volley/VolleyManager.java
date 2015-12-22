@@ -60,6 +60,7 @@ public class VolleyManager
 
     public void JsonObjectRequestByGet()
     {
+
     }
 
     public void XMLRequest()

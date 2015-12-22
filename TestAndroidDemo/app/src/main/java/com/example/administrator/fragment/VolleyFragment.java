@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.administrator.BaseApplication;
 import com.example.administrator.testandroiddemo.R;
 
 /**
@@ -18,11 +19,13 @@ public class VolleyFragment extends BaseFragment
     private final String TAG = VolleyFragment.class.getSimpleName();
 
     private Button imageUpdateBtn = null;
+    private Button jsonBtn = null;
 
     @Override
     protected void findViews(View v)
     {
         imageUpdateBtn = (Button)v.findViewById(R.id.imageViewBtn);
+        jsonBtn = (Button)v.findViewById(R.id.jsonBtn);
     }
 
     @Override
@@ -35,6 +38,15 @@ public class VolleyFragment extends BaseFragment
             {
                 Log.v(TAG, "imageUpdateBtn");
                 replaceFragment(new VolleyImageFragment(), true);
+            }
+        });
+
+        jsonBtn.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                BaseApplication.application.getVolleyManager().JsonObjectRequestByGet();
             }
         });
     }
