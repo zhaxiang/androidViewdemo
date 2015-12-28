@@ -12,6 +12,8 @@ import com.example.administrator.data.Constants;
 import com.example.administrator.fragment.CustomerFragmentManager;
 import com.example.administrator.fragment.EventBusFragment;
 import com.example.administrator.fragment.GaodeMapFragment;
+import com.example.administrator.fragment.SlidingPaneLayout.SlidingPaneLayoutFragment;
+import com.example.administrator.fragment.UpdateApkFragment;
 import com.example.administrator.fragment.VolleyFragment;
 import com.example.administrator.testandroiddemo.R;
 import com.example.administrator.fragment.ListDemoFragment;
@@ -58,6 +60,16 @@ public class ShowDemoActivity extends BaseActivity
             titleId = R.string.event_bus_demo;
             showEventBusFragment();
         }
+        else if(currentFragment == Constants.SlidingPaneLayoutFragment)
+        {
+            titleId = R.string.sliding_pane_layout_demo;
+            showSlidingPaneLayoutFragment();
+        }
+        else if(currentFragment == Constants.UpdateApkFragment)
+        {
+            titleId = R.string.update_apk_demo;
+            showUpdateApkFragment();
+        }
         this.getSupportActionBar().setTitle(titleId);
     }
 
@@ -81,6 +93,18 @@ public class ShowDemoActivity extends BaseActivity
     {
         Log.v(TAG, "showEventBusFragment");
         replaceFragment(new EventBusFragment(), false);
+    }
+
+    private void showSlidingPaneLayoutFragment()
+    {
+        Log.v(TAG, "showSlidingPaneLayoutFragment");
+        replaceFragment(new SlidingPaneLayoutFragment(), false);
+    }
+
+    private void showUpdateApkFragment()
+    {
+        Log.v(TAG, "showUpdateApkFragment");
+        replaceFragment(new UpdateApkFragment(), false);
     }
 
     @Override

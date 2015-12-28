@@ -54,6 +54,13 @@ public class CustomerFragmentManager
 
     Activity getFramentContentActivity(){return mActivity;}
 
+    public Fragment findFragmentById(int id)
+    {
+        if(fragmentManager != null)
+            return fragmentManager.findFragmentById(id);
+        return null;
+    }
+
     public void replaceFragment(Fragment fragment, boolean isAddToBack)
     {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

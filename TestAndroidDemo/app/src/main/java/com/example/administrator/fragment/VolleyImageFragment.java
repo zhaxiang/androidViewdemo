@@ -85,8 +85,6 @@ public class VolleyImageFragment extends BaseFragment
             {
                 Log.v(TAG, "position =" + position);
                 Toast.makeText(getActivity().getApplicationContext(), "current item pos index = " + position, Toast.LENGTH_SHORT).show();
-                BaseApplication.application.getVolleyManager().XMLRequest();
-                BaseApplication.application.getVolleyManager().JsonObjectRequestByGet();
             }
         });
     }

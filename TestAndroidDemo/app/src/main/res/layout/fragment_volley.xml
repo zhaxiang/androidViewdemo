@@ -11,8 +11,18 @@
         android:layout_height="wrap_content"
         android:text="@string/volley_imageview_update"/>
     <Button
+        android:id="@+id/xmlBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/volley_xml_request"/>
+    <Button
         android:id="@+id/jsonBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/volley_json_request"/>
+    <TextView
+        android:id="@+id/responseContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="show_response_content"/>
 </LinearLayout>

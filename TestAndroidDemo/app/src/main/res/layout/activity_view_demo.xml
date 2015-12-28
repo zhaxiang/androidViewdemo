@@ -36,11 +36,23 @@
             android:text="@string/event_bus_demo"
             android:layout_below="@+id/gaoDeDitu"/>
         <Button
+            android:id="@+id/slidingPaneLayoutBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sliding_pane_layout_demo"
+            android:layout_below="@+id/eventBusBtn"/>
+        <Button
+            android:id="@+id/updateApkBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/update_apk_demo"
+            android:layout_below="@+id/slidingPaneLayoutBtn"/>
+        <Button
             android:id="@+id/next"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="next_null"
-            android:layout_below="@+id/eventBusBtn"/>
+            android:layout_below="@+id/updateApkBtn"/>
     </RelativeLayout>
 </ScrollView>
 </RelativeLayout>

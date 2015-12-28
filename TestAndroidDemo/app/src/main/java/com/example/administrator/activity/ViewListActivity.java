@@ -23,6 +23,8 @@ public class ViewListActivity extends AppCompatActivity implements View.OnClickL
     private Button volleyBtn = null;
     private Button gaodeMapBtn = null;
     private Button eventBusBtn = null;
+    private Button slidingPaneLayoutBtn = null;
+    private Button updateApkBtn = null;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -41,6 +43,11 @@ public class ViewListActivity extends AppCompatActivity implements View.OnClickL
         eventBusBtn = (Button)findViewById(R.id.eventBusBtn);
         eventBusBtn.setOnClickListener(this);
 
+        slidingPaneLayoutBtn = (Button)findViewById(R.id.slidingPaneLayoutBtn);
+        slidingPaneLayoutBtn.setOnClickListener(this);
+
+        updateApkBtn = (Button)findViewById(R.id.updateApkBtn);
+        updateApkBtn.setOnClickListener(this);
     }
 
     @Override
@@ -66,6 +73,16 @@ public class ViewListActivity extends AppCompatActivity implements View.OnClickL
         {
             Log.v(TAG, "eventBusBtn");
             tagName = Constants.EventBusFragment;
+        }
+        else if(v == slidingPaneLayoutBtn)
+        {
+            Log.v(TAG, "slidingPaneLayoutBtn");
+            tagName = Constants.SlidingPaneLayoutFragment;
+        }
+        else if(v == updateApkBtn)
+        {
+            Log.v(TAG, "UpdateApkFragment");
+            tagName = Constants.UpdateApkFragment;
         }
         BaseApplication.application.setFragmentString(tagName);
         Intent intent = new Intent(ViewListActivity.this, ShowDemoActivity.class);

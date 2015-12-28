@@ -132,6 +132,21 @@ public abstract class BaseFragment extends Fragment
         super.onActivityResult(requestCode, resultCode, data);
     }
 
+    public Fragment findFragmentById(int id)
+    {
+        if(this.getActivity() == null)
+        {
+            throw new IllegalStateException("getActivity is null");
+        }
+
+        CustomerFragmentManager customerFragmentManager = ((BaseActivity) this.getActivity()).getCustomerFragmentManager();
+        if(null != customerFragmentManager)
+        {
+            return customerFragmentManager.findFragmentById(id);
+        }
+        return null;
+    }
+
     public void replaceFragment(Fragment fragment, boolean isAddToStack)
     {
         if(this.getActivity() == null)

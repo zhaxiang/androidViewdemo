@@ -13,8 +13,11 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.JsonRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.administrator.data.Constants;
+import com.example.administrator.data.MyVolleyListener;
+import com.example.administrator.data.Weather;
 
 import org.json.JSONObject;
 import org.xmlpull.v1.XmlPullParser;
@@ -58,14 +61,31 @@ public class VolleyManager
         return mRequestQueue;
     }
 
-    public void JsonObjectRequestByGet()
+    public void JsonObjectRequest(String url, final MyVolleyListener listener)
     {
+        JsonObjectRequest jsonRequest = new JsonObjectRequest(url, null, new Response.Listener<JSONObject>()
+        {
+            @Override
+            public void onResponse(JSONObject jsonObject)
+            {
+                listener.myVolleyListener(0, jsonObject.toString());
+            }
+        }, new Response.ErrorListener()
+        {
 
+            @Override
+            public void onErrorResponse(VolleyError volleyError)
+            {
+                listener.myVolleyListener(1, "volleyError = " + volleyError.getMessage());
+            }
+        });
+
+        addToRequestQueue(jsonRequest);
     }
 
-    public void XMLRequest()
+    public void XMLRequest(String url, final MyVolleyListener listener)
     {
-        XMLRequest xmlRequest = new XMLRequest("http://flash.weather.com.cn/wmaps/xml/china.xml", new Response.Listener<XmlPullParser>()
+        XMLRequest xmlRequest = new XMLRequest(url, new Response.Listener<XmlPullParser>()
         {
             @Override
             public void onResponse(XmlPullParser response)
@@ -83,6 +103,13 @@ public class VolleyManager
                                 {
                                     String pName = response.getAttributeValue(0);
                                     Log.v("TAG", "pName is " + pName);
+                                    Weather weather = new Weather(response.getAttributeValue(0), response.getAttributeValue(1),
+                                            response.getAttributeValue(2), Integer.parseInt(response.getAttributeValue(3)),
+                                            Integer.parseInt(response.getAttributeValue(4)), response.getAttributeValue(5),
+                                            Integer.parseInt(response.getAttributeValue(6)), Integer.parseInt(response.getAttributeValue(7)),
+                                            response.getAttributeValue(8));
+                                    if(null != listener)
+                                        listener.myVolleyListener(0, weather);
                                 }
                                 break;
                         }
@@ -104,6 +131,8 @@ public class VolleyManager
                 public void onErrorResponse(VolleyError error)
                 {
                     Log.e("TAG", error.getMessage(), error);
+                    if(null != listener)
+                        listener.myVolleyListener(1, null);
                 }
         });
         addToRequestQueue(xmlRequest);

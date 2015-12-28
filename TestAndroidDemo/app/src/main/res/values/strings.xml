@@ -7,11 +7,12 @@
     <string name = "baseservice_testin">BaseService方法getPersonIn测试</string>
     <string name = "baseservice_testout">BaseService方法getPersonOut测试</string>
     <string name = "baseservice_testinout">BaseService方法getPersonInOut测试</string>
-    <string name = "view_demo_show">各种自定义控件demo演示界面</string>
+    <string name = "view_demo_show">各种自定义控件以及开源框架demo演示界面</string>
     <string name = "list_refresh_show">自定义list实现上拉加载下拉刷新</string>
     <string name = "volley_interface_show">volley框架演示</string>
     <string name = "volley_imageview_update">volley框架演示图片下载完刷新</string>
     <string name = "volley_json_request">volley框架演示json请求数据</string>
+    <string name = "volley_xml_request">volley框架演示xml请求数据</string>
 
 
 
@@ -44,7 +45,18 @@
     <string name = "jump_to_otheractivity">跳转到其他activity</string>
     <string name = "use_eventbus_post">使用EventBus发送消息进行演示</string>
 
+    <string name = "sliding_pane_layout_demo">SlidingPaneLayout(抽屉)demo</string>
+    <string name = "wangyi">网易</string>
+    <string name = "xinlang">新浪</string>
+    <string name = "tengxun">腾讯</string>
+    <string name = "souhu">搜狐</string>
+    <string name = "sliding_pane_animation">滑动动画</string>
 
+    <string name = "update_apk_demo">后台下载apk，并提示安装demo！</string>
+    <string name="use_downloadmanager_update_apk">使用android自带的DownloadManager下载apk</string>
+    <string name="download">下载</string>
+    <string name="pause">暂停</string>
+    <string name="delete">删除</string>
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

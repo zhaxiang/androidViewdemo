@@ -132,6 +132,7 @@ public class GaodeMapFragment extends BaseFragment implements LocationSource, AM
     @Override
     protected void initData(Bundle var)
     {
+//        aMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(156.22, 121.48), 18));
         setMapLocation();
 
     }

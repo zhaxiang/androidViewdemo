@@ -7,9 +7,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.administrator.BaseApplication;
+import com.example.administrator.data.Constants;
+import com.example.administrator.data.MyVolleyListener;
+import com.example.administrator.data.Weather;
 import com.example.administrator.testandroiddemo.R;
+
+import java.util.Objects;
 
 /**
  * Created by Administrator on 2015/12/10.
@@ -19,13 +25,17 @@ public class VolleyFragment extends BaseFragment
     private final String TAG = VolleyFragment.class.getSimpleName();
 
     private Button imageUpdateBtn = null;
+    private Button xmlBtn = null;
     private Button jsonBtn = null;
+    private TextView responseText = null;
 
     @Override
     protected void findViews(View v)
     {
         imageUpdateBtn = (Button)v.findViewById(R.id.imageViewBtn);
+        xmlBtn = (Button)v.findViewById(R.id.xmlBtn);
         jsonBtn = (Button)v.findViewById(R.id.jsonBtn);
+        responseText = (TextView)v.findViewById(R.id.responseContent);
     }
 
     @Override
@@ -41,12 +51,40 @@ public class VolleyFragment extends BaseFragment
             }
         });
 
+        xmlBtn.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                BaseApplication.application.getVolleyManager().XMLRequest(Constants.testUrl, new MyVolleyListener<Weather>() {
+                    @Override
+                    public void myVolleyListener(int result, Weather a)
+                    {
+                        if (result == 0)
+                        {
+                            responseText.setText(a.weatherToString());
+                        }
+                        else
+                        {
+                            responseText.setText("response fail!");
+                        }
+                    }
+                });
+            }
+        });
+
         jsonBtn.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                BaseApplication.application.getVolleyManager().JsonObjectRequestByGet();
+                BaseApplication.application.getVolleyManager().JsonObjectRequest(Constants.testJsonUrl, new MyVolleyListener<String>() {
+                    @Override
+                    public void myVolleyListener(int result, String a)
+                    {
+                        responseText.setText(a);
+                    }
+                });
             }
         });
     }
