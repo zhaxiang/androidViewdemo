@@ -56,7 +56,7 @@
     <string name="use_downloadmanager_update_apk">使用android自带的DownloadManager下载apk</string>
     <string name="download">下载</string>
     <string name="pause">暂停</string>
-    <string name="delete">删除</string>
+    <string name="deleteTask">删除下载</string>
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

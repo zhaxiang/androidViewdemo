@@ -6,6 +6,7 @@ package com.example.administrator.data;
 public class Constants
 {
     public static final int BITMAP_CACHE_SIZE = 20;
+    public static final String DOWNLOAD_APK_NAME = "testAndroid.apk";
     //测试url
     public static String[] imageUrl = {"" +
             "http://img1.3lian.com/img2011/w10/1019/5/10.jpg",

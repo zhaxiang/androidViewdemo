@@ -1,6 +1,7 @@
 package com.example.administrator.fragment;
 
 
+import android.app.DownloadManager;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.util.Log;
@@ -8,8 +9,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.example.administrator.download.DownloadApk;
+import com.example.administrator.download.DownloadListener;
 import com.example.administrator.testandroiddemo.R;
 
 /**
@@ -20,9 +24,9 @@ public class UpdateApkFragment extends BaseFragment implements View.OnClickListe
     private final String TAG = UpdateApkFragment.class.getSimpleName();
 
     private Button downloadBtn;
-    private Button pauseBtn;
     private Button deleteBtn;
     private TextView downloadText;
+    private ProgressBar progressBar;
 
     public UpdateApkFragment()
     {
@@ -34,16 +38,15 @@ public class UpdateApkFragment extends BaseFragment implements View.OnClickListe
     protected void findViews(View v)
     {
         downloadBtn = (Button)v.findViewById(R.id.downloadBtn);
-        pauseBtn = (Button)v.findViewById(R.id.pauseBtn);
         deleteBtn = (Button)v.findViewById(R.id.deleteBtn);
         downloadText = (TextView)v.findViewById(R.id.downloadText);
+        progressBar = (ProgressBar)v.findViewById(R.id.progressBar);
     }
 
     @Override
     protected void initViews(Bundle var)
     {
         downloadBtn.setOnClickListener(this);
-        pauseBtn.setOnClickListener(this);
         deleteBtn.setOnClickListener(this);
     }
 
@@ -57,7 +60,6 @@ public class UpdateApkFragment extends BaseFragment implements View.OnClickListe
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState)
     {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_update_apk, container, false);
     }
 
@@ -88,14 +90,46 @@ public class UpdateApkFragment extends BaseFragment implements View.OnClickListe
         if(v == downloadBtn)
         {
             Log.v(TAG, "downloadBtn");
-        }
-        else if(v == pauseBtn)
-        {
-            Log.v(TAG, "pauseBtn");
+            DownloadApk.getInstance(getActivity()).downloadApk("http://gdown.baidu.com/data/wisegame/55dc62995fe9ba82/jinritoutiao_448.apk",
+                    "test download", "test download bottom", new DownloadListener()
+                    {
+
+                        @Override
+                        public void start()
+                        {
+                            downloadText.setText("start download!");
+                        }
+
+                        @Override
+                        public void progress(long currentSize, long totalSize)
+                        {
+                            progressBar.setMax((int)totalSize);
+                            progressBar.setProgress((int)currentSize);
+                        }
+
+                        @Override
+                        public void success()
+                        {
+                            downloadText.setText("success download!");
+                        }
+
+                        @Override
+                        public void cancel()
+                        {
+                            downloadText.setText("cancel download!");
+                        }
+
+                        @Override
+                        public void fail()
+                        {
+
+                        }
+                    });
         }
         else if(v == deleteBtn)
         {
             Log.v(TAG, "deleteBtn");
+            DownloadApk.getInstance(getActivity()).removeDownloadApk();
         }
     }
 }
