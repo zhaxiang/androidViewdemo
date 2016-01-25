@@ -12,6 +12,7 @@ import com.example.administrator.data.Constants;
 import com.example.administrator.fragment.CustomerFragmentManager;
 import com.example.administrator.fragment.EventBusFragment;
 import com.example.administrator.fragment.GaodeMapFragment;
+import com.example.administrator.fragment.GridViewFragment;
 import com.example.administrator.fragment.SlidingPaneLayout.SlidingPaneLayoutFragment;
 import com.example.administrator.fragment.UpdateApkFragment;
 import com.example.administrator.fragment.VolleyFragment;
@@ -70,6 +71,11 @@ public class ShowDemoActivity extends BaseActivity
             titleId = R.string.update_apk_demo;
             showUpdateApkFragment();
         }
+        else if(currentFragment == Constants.GridViewFragment)
+        {
+            titleId = R.string.gridview_test;
+            showGridViewFragment();
+        }
         this.getSupportActionBar().setTitle(titleId);
     }
 
@@ -105,6 +111,12 @@ public class ShowDemoActivity extends BaseActivity
     {
         Log.v(TAG, "showUpdateApkFragment");
         replaceFragment(new UpdateApkFragment(), false);
+    }
+
+    private void showGridViewFragment()
+    {
+        Log.v(TAG, "showGridViewFragment");
+        replaceFragment(new GridViewFragment(), false);
     }
 
     @Override

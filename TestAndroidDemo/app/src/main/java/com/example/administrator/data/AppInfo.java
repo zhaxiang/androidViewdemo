@@ -15,6 +15,7 @@ public class AppInfo implements Parcelable
     private int versionCode = 0;
     private String appIconPath = null;
     private String appUrl = null;
+    private Drawable appIcon = null;
 
     protected AppInfo(Parcel in)
     {

@@ -25,6 +25,7 @@ public class ViewListActivity extends AppCompatActivity implements View.OnClickL
     private Button eventBusBtn = null;
     private Button slidingPaneLayoutBtn = null;
     private Button updateApkBtn = null;
+    private Button gridviewBtn = null;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -48,6 +49,9 @@ public class ViewListActivity extends AppCompatActivity implements View.OnClickL
 
         updateApkBtn = (Button)findViewById(R.id.updateApkBtn);
         updateApkBtn.setOnClickListener(this);
+
+        gridviewBtn = (Button)findViewById(R.id.gridviewBtn);
+        gridviewBtn.setOnClickListener(this);
     }
 
     @Override
@@ -84,6 +88,12 @@ public class ViewListActivity extends AppCompatActivity implements View.OnClickL
             Log.v(TAG, "UpdateApkFragment");
             tagName = Constants.UpdateApkFragment;
         }
+        else if(v == gridviewBtn)
+        {
+            Log.v(TAG, "GridViewFragment");
+            tagName = Constants.GridViewFragment;
+        }
+
         BaseApplication.application.setFragmentString(tagName);
         Intent intent = new Intent(ViewListActivity.this, ShowDemoActivity.class);
         startActivity(intent);

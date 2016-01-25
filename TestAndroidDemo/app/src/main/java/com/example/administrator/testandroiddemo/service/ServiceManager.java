@@ -43,6 +43,11 @@ public class ServiceManager
         return mInstance;
     }
 
+    public static ServiceManager getInstance()
+    {
+        return mInstance;
+    }
+
     public ServiceManager(Context context)
     {
         mContext = context;

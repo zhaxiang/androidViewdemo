@@ -47,12 +47,20 @@
             android:layout_height="wrap_content"
             android:text="@string/update_apk_demo"
             android:layout_below="@+id/slidingPaneLayoutBtn"/>
+
+        <Button
+            android:id="@+id/gridviewBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/gridview_test"
+            android:layout_below="@+id/updateApkBtn"/>
+
         <Button
             android:id="@+id/next"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="next_null"
-            android:layout_below="@+id/updateApkBtn"/>
+            android:layout_below="@+id/gridviewBtn"/>
     </RelativeLayout>
 </ScrollView>
 </RelativeLayout>

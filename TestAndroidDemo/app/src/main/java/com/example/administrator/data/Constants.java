@@ -25,6 +25,7 @@ public class Constants
     public static final String EventBusFragment = "EventBusFragment";
     public static final String SlidingPaneLayoutFragment = "SlidingPaneLayoutFragment";
     public static final String UpdateApkFragment = "UpdateApkFragment";
+    public static final String GridViewFragment = "GridViewFragment";
     public static final int POI_SEARCH_NUM = 10;//地图poi搜索每页搜索显示个数
     public static final String FRAGMENT_LIST[] = {ListFragment, VolleyFragment};
 }

@@ -9,13 +9,13 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.PixelFormat;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
-import com.example.administrator.BaseApplication;
 import com.example.administrator.data.AppInfo;
 import com.example.administrator.data.Person;
 
@@ -196,13 +196,26 @@ public class BaseService extends Service
 
     public Bitmap drawableToBitmap(Drawable drawable)
     {
+
+        if (drawable instanceof BitmapDrawable) {
+            return ((BitmapDrawable) drawable).getBitmap();
+        }
+
         int width = drawable.getIntrinsicWidth();
         int height = drawable.getIntrinsicHeight();
-        Bitmap bitmap = Bitmap.createBitmap(width, height, drawable.getOpacity() != PixelFormat.OPAQUE ? Bitmap.Config.ARGB_8888 : Bitmap.Config.RGB_565);
+        Bitmap bitmap = Bitmap.createBitmap(width, height, drawable.getOpacity() != PixelFormat.OPAQUE ?
+                Bitmap.Config.ARGB_8888 : Bitmap.Config.RGB_565);
         Canvas canvas = new Canvas(bitmap);
+        drawable.setFilterBitmap(true);
         drawable.setBounds(0, 0, width, height);
         drawable.draw(canvas);
         return bitmap;
 
+    }
+
+    public Drawable bitmapToDrawable(Bitmap bitmap)
+    {
+        BitmapDrawable bd = new BitmapDrawable(bitmap);
+        return bd;
     }
 }

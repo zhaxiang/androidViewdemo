@@ -57,6 +57,8 @@
     <string name="download">下载</string>
     <string name="pause">暂停</string>
     <string name="deleteTask">删除下载</string>
+
+    <string name="gridview_test">Gridview Demo演示</string>
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
