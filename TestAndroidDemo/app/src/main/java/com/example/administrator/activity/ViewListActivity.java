@@ -26,6 +26,7 @@ public class ViewListActivity extends AppCompatActivity implements View.OnClickL
     private Button slidingPaneLayoutBtn = null;
     private Button updateApkBtn = null;
     private Button gridviewBtn = null;
+    private Button percentLayoutBtn = null;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -52,6 +53,11 @@ public class ViewListActivity extends AppCompatActivity implements View.OnClickL
 
         gridviewBtn = (Button)findViewById(R.id.gridviewBtn);
         gridviewBtn.setOnClickListener(this);
+
+        percentLayoutBtn = (Button)findViewById(R.id.percentLayoutBtn);
+        percentLayoutBtn.setOnClickListener(this);
+
+
     }
 
     @Override
@@ -92,6 +98,11 @@ public class ViewListActivity extends AppCompatActivity implements View.OnClickL
         {
             Log.v(TAG, "GridViewFragment");
             tagName = Constants.GridViewFragment;
+        }
+        else if(v == percentLayoutBtn)
+        {
+            Log.v(TAG, "PercentlayoutFragment");
+            tagName = Constants.PercentlayoutFragment;
         }
 
         BaseApplication.application.setFragmentString(tagName);

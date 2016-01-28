@@ -192,4 +192,19 @@ public abstract class BaseFragment extends Fragment
     {
         ((BaseActivity)this.getActivity()).dissmissProgressDialog();
     }
+
+    public void showToast(int id)
+    {
+        ((BaseActivity)this.getActivity()).showToast(id);
+    }
+
+    public void showToast(String content)
+    {
+        ((BaseActivity)this.getActivity()).showToast(content);
+    }
+
+    public void showToast(int id, String content)
+    {
+        ((BaseActivity)this.getActivity()).showToast(id, content);
+    }
 }

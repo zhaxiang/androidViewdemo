@@ -122,6 +122,9 @@ public class BaseApplication extends Application
 
     public void showToast(int id, String other)
     {
-        Toast.makeText(this, this.getResources().getString(id) + other, Toast.LENGTH_SHORT).show();
+        StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer.append(this.getResources().getString(id));
+        stringBuffer.append(other);
+        Toast.makeText(this, stringBuffer.toString(), Toast.LENGTH_SHORT).show();
     }
 }

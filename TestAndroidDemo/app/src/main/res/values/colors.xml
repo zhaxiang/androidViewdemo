@@ -6,4 +6,5 @@
     <color name="colorGray">#000000</color>
     <color name="color_0_f_f">#ff00ffff</color>
     <color name="color_wirte">#ffffffff</color>
+    <color name="color_e_e_e">#ffeeeeee</color>
 </resources>

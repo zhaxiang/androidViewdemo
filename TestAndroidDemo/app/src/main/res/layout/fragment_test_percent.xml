@@ -1,5 +1,406 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+<com.zhy.android.percent.support.PercentLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/color_e_e_e">
 
-</LinearLayout>
+    <!-- layout_widthPercent  layout_marginLeftPercent layout_marginStartPercent 相对于自己的父控件
+        app:layout_heightPercent="50%w", app:layout_marginPercent="15%w",
+        app:layout_marginBottomPercent="20%h"
+    -->
+
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_widthPercent="100%"
+        app:layout_heightPercent="25%"
+        android:clickable="true">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_widthPercent="100%"
+            app:layout_heightPercent="90%"
+            android:background="@mipmap/default_banner"/>
+    </com.zhy.android.percent.support.PercentLinearLayout>
+
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_widthPercent="100%"
+        app:layout_heightPercent="75%"
+        android:clickable="true"
+        android:orientation="vertical">
+
+        <com.zhy.android.percent.support.PercentLinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_widthPercent="100%"
+            app:layout_heightPercent="32%w">
+
+            <com.zhy.android.percent.support.PercentRelativeLayout
+                android:id="@+id/percentRelativeLayout_1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_widthPercent="32%"
+                app:layout_heightPercent="100%"
+                android:background="@color/color_wirte">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@mipmap/park"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="fitXY"
+                    android:layout_above="@+id/text_tip1"
+                    app:layout_marginBottomPercent="10%w"
+                    app:layout_widthPercent="30%"
+                    app:layout_heightPercent="30%"/>
+
+                <TextView
+                    android:id="@+id/text_tip1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/percent_relative"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    app:layout_textSizePercent="10%w"
+                    app:layout_marginBottomPercent="20%w"/>
+
+            </com.zhy.android.percent.support.PercentRelativeLayout>
+
+            <com.zhy.android.percent.support.PercentRelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_widthPercent="2%"
+                app:layout_heightPercent="100%"/>
+
+            <com.zhy.android.percent.support.PercentRelativeLayout
+                android:id="@+id/percentRelativeLayout_2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_widthPercent="32%"
+                app:layout_heightPercent="100%"
+                android:background="@color/color_wirte">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@mipmap/park"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="fitXY"
+                    android:layout_above="@+id/text_tip2"
+                    app:layout_marginBottomPercent="10%w"
+                    app:layout_widthPercent="30%"
+                    app:layout_heightPercent="30%"/>
+
+                <TextView
+                    android:id="@+id/text_tip2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/percent_relative"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    app:layout_textSizePercent="10%w"
+                    app:layout_marginBottomPercent="20%w"/>
+
+            </com.zhy.android.percent.support.PercentRelativeLayout>
+
+            <com.zhy.android.percent.support.PercentRelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_widthPercent="2%"
+                app:layout_heightPercent="100%"/>
+
+            <com.zhy.android.percent.support.PercentRelativeLayout
+                android:id="@+id/percentRelativeLayout_3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_widthPercent="32%"
+                app:layout_heightPercent="100%"
+                android:background="@color/color_wirte">
+
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@mipmap/park"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="fitXY"
+                    android:layout_above="@+id/text_tip3"
+                    app:layout_marginBottomPercent="10%w"
+                    app:layout_widthPercent="30%"
+                    app:layout_heightPercent="30%"/>
+
+                <TextView
+                    android:id="@+id/text_tip3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/percent_relative"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    app:layout_textSizePercent="10%w"
+                    app:layout_marginBottomPercent="20%w"/>
+
+            </com.zhy.android.percent.support.PercentRelativeLayout>
+
+
+
+
+        </com.zhy.android.percent.support.PercentLinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_widthPercent="100%"
+            app:layout_heightPercent="2%w"/>
+
+
+
+        <com.zhy.android.percent.support.PercentLinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_widthPercent="100%"
+            app:layout_heightPercent="32%w">
+
+            <com.zhy.android.percent.support.PercentRelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_widthPercent="32%"
+                app:layout_heightPercent="100%"
+                android:background="@color/color_wirte">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@mipmap/park"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="fitXY"
+                    android:layout_above="@+id/text_tip4"
+                    app:layout_marginBottomPercent="10%w"
+                    app:layout_widthPercent="30%"
+                    app:layout_heightPercent="30%"/>
+
+                <TextView
+                    android:id="@+id/text_tip4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/percent_relative"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    app:layout_textSizePercent="10%w"
+                    app:layout_marginBottomPercent="20%w"/>
+
+            </com.zhy.android.percent.support.PercentRelativeLayout>
+
+            <com.zhy.android.percent.support.PercentRelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_widthPercent="2%"
+                app:layout_heightPercent="100%"/>
+
+            <com.zhy.android.percent.support.PercentRelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_widthPercent="32%"
+                app:layout_heightPercent="100%"
+                android:background="@color/color_wirte">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@mipmap/park"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="fitXY"
+                    android:layout_above="@+id/text_tip5"
+                    app:layout_marginBottomPercent="10%w"
+                    app:layout_widthPercent="30%"
+                    app:layout_heightPercent="30%"/>
+
+                <TextView
+                    android:id="@+id/text_tip5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/percent_relative"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    app:layout_textSizePercent="10%w"
+                    app:layout_marginBottomPercent="20%w"/>
+
+            </com.zhy.android.percent.support.PercentRelativeLayout>
+
+            <com.zhy.android.percent.support.PercentRelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_widthPercent="2%"
+                app:layout_heightPercent="100%"/>
+
+            <com.zhy.android.percent.support.PercentRelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_widthPercent="32%"
+                app:layout_heightPercent="100%"
+                android:background="@color/color_wirte">
+
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@mipmap/park"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="fitXY"
+                    android:layout_above="@+id/text_tip6"
+                    app:layout_marginBottomPercent="10%w"
+                    app:layout_widthPercent="30%"
+                    app:layout_heightPercent="30%"/>
+
+                <TextView
+                    android:id="@+id/text_tip6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/percent_relative"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    app:layout_textSizePercent="10%w"
+                    app:layout_marginBottomPercent="20%w"/>
+
+            </com.zhy.android.percent.support.PercentRelativeLayout>
+
+
+
+
+        </com.zhy.android.percent.support.PercentLinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_widthPercent="100%"
+            app:layout_heightPercent="2%w"/>
+
+
+        <com.zhy.android.percent.support.PercentLinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_widthPercent="100%"
+            app:layout_heightPercent="32%w">
+
+            <com.zhy.android.percent.support.PercentRelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_widthPercent="32%"
+                app:layout_heightPercent="100%"
+                android:background="@color/color_wirte">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@mipmap/park"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="fitXY"
+                    android:layout_above="@+id/text_tip7"
+                    app:layout_marginBottomPercent="10%w"
+                    app:layout_widthPercent="30%"
+                    app:layout_heightPercent="30%"/>
+
+                <TextView
+                    android:id="@+id/text_tip7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/percent_relative"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    app:layout_textSizePercent="10%w"
+                    app:layout_marginBottomPercent="20%w"/>
+
+            </com.zhy.android.percent.support.PercentRelativeLayout>
+
+            <com.zhy.android.percent.support.PercentRelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_widthPercent="2%"
+                app:layout_heightPercent="100%"/>
+
+            <com.zhy.android.percent.support.PercentRelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_widthPercent="32%"
+                app:layout_heightPercent="100%"
+                android:background="@color/color_wirte">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@mipmap/park"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="fitXY"
+                    android:layout_above="@+id/text_tip8"
+                    app:layout_marginBottomPercent="10%w"
+                    app:layout_widthPercent="30%"
+                    app:layout_heightPercent="30%"/>
+
+                <TextView
+                    android:id="@+id/text_tip8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/percent_relative"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    app:layout_textSizePercent="10%w"
+                    app:layout_marginBottomPercent="20%w"/>
+
+            </com.zhy.android.percent.support.PercentRelativeLayout>
+
+            <com.zhy.android.percent.support.PercentRelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_widthPercent="2%"
+                app:layout_heightPercent="100%"/>
+
+            <com.zhy.android.percent.support.PercentRelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_widthPercent="32%"
+                app:layout_heightPercent="100%"
+                android:background="@color/color_wirte">
+
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@mipmap/park"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="fitXY"
+                    android:layout_above="@+id/text_tip9"
+                    app:layout_marginBottomPercent="10%w"
+                    app:layout_widthPercent="30%"
+                    app:layout_heightPercent="30%"/>
+
+                <TextView
+                    android:id="@+id/text_tip9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/percent_relative"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"
+                    app:layout_textSizePercent="10%w"
+                    app:layout_marginBottomPercent="20%w"/>
+
+            </com.zhy.android.percent.support.PercentRelativeLayout>
+
+
+
+
+        </com.zhy.android.percent.support.PercentLinearLayout>
+
+
+
+
+    </com.zhy.android.percent.support.PercentLinearLayout>
+
+</com.zhy.android.percent.support.PercentLinearLayout>

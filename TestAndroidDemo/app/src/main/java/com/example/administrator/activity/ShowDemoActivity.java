@@ -13,6 +13,7 @@ import com.example.administrator.fragment.CustomerFragmentManager;
 import com.example.administrator.fragment.EventBusFragment;
 import com.example.administrator.fragment.GaodeMapFragment;
 import com.example.administrator.fragment.GridViewFragment;
+import com.example.administrator.fragment.PercentlayoutFragment;
 import com.example.administrator.fragment.SlidingPaneLayout.SlidingPaneLayoutFragment;
 import com.example.administrator.fragment.UpdateApkFragment;
 import com.example.administrator.fragment.VolleyFragment;
@@ -76,6 +77,12 @@ public class ShowDemoActivity extends BaseActivity
             titleId = R.string.gridview_test;
             showGridViewFragment();
         }
+        else if(currentFragment == Constants.PercentlayoutFragment)
+        {
+            titleId = R.string.percent_layout;
+            showPercentLayoutFragment();
+        }
+
         this.getSupportActionBar().setTitle(titleId);
     }
 
@@ -117,6 +124,12 @@ public class ShowDemoActivity extends BaseActivity
     {
         Log.v(TAG, "showGridViewFragment");
         replaceFragment(new GridViewFragment(), false);
+    }
+
+    private void showPercentLayoutFragment()
+    {
+        Log.v(TAG, "showPercentLayoutFragment");
+        replaceFragment(new PercentlayoutFragment(), false);
     }
 
     @Override

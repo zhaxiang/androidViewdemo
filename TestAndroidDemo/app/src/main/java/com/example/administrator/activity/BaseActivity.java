@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.administrator.BaseApplication;
 import com.example.administrator.fragment.CustomerFragmentManager;
 
 public class BaseActivity extends AppCompatActivity
@@ -84,5 +85,20 @@ public class BaseActivity extends AppCompatActivity
         if (progDialog != null) {
             progDialog.dismiss();
         }
+    }
+
+    public void showToast(int id)
+    {
+        BaseApplication.application.showToast(id);
+    }
+
+    public void showToast(String content)
+    {
+        BaseApplication.application.showToast(content);
+    }
+
+    public void showToast(int id, String content)
+    {
+        BaseApplication.application.showToast(id, content);
     }
 }

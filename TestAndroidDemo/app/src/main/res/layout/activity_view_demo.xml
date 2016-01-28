@@ -56,11 +56,18 @@
             android:layout_below="@+id/updateApkBtn"/>
 
         <Button
+            android:id="@+id/percentLayoutBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/percent_layout"
+            android:layout_below="@+id/gridviewBtn"/>
+
+        <Button
             android:id="@+id/next"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="next_null"
-            android:layout_below="@+id/gridviewBtn"/>
+            android:layout_below="@+id/percentLayoutBtn"/>
     </RelativeLayout>
 </ScrollView>
 </RelativeLayout>
