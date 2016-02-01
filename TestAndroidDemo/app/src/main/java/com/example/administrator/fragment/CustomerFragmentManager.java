@@ -67,7 +67,7 @@ public class CustomerFragmentManager
     };
 
     //此方法是为给在xml中定义好FrameLayout添加对应布局使用
-    public void addFragment(int id, Fragment fragment, boolean isAddToBack)
+    public void replaceFragment(int id, Fragment fragment, boolean isAddToBack)
     {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 

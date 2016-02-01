@@ -45,9 +45,9 @@ public class BaseActivity extends AppCompatActivity
         customerFragmentManager.replaceFragment(fragment, isAddToBack);
     }
 
-    public void addFragment(int id, Fragment fragment, boolean isAddToBack)
+    public void replaceFragment(int id, Fragment fragment, boolean isAddToBack)
     {
-        customerFragmentManager.addFragment(id, fragment, isAddToBack);
+        customerFragmentManager.replaceFragment(id, fragment, isAddToBack);
     }
 
 

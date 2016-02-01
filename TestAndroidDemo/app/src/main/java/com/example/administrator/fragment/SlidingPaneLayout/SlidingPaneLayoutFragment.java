@@ -29,10 +29,10 @@ public class SlidingPaneLayoutFragment extends BaseFragment implements SlidingLe
 
 //        Fragment leftFragment = (Fragment)v.findViewById(R.id.leftFragment);
         slidingLeftFragment = new SlidingLeftFragment();
-        addFragment(R.id.leftFragment, slidingLeftFragment, false);
+        replaceFragment(R.id.leftFragment, slidingLeftFragment, false);
 
         slidingRightFragment = new SlidingRightFragment();
-        addFragment(R.id.rightFragment, slidingRightFragment, false);
+        replaceFragment(R.id.rightFragment, slidingRightFragment, false);
 
 //        slidingLeftFragment = (SlidingLeftFragment)findFragmentById(R.id.leftFragment);
 //        slidingRightFragment = (SlidingRightFragment)findFragmentById(R.id.rightFragment);

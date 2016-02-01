@@ -147,7 +147,7 @@ public abstract class BaseFragment extends Fragment
         }
     }
 
-    public void addFragment(int id, Fragment fragment, boolean isAddToStack)
+    public void replaceFragment(int id, Fragment fragment, boolean isAddToStack)
     {
         if(this.getActivity() == null)
         {
@@ -158,7 +158,7 @@ public abstract class BaseFragment extends Fragment
         if(null != customerFragmentManager)
         {
             Log.v(TAG, "replaceFragment null != customerFragmentManager");
-            customerFragmentManager.addFragment(id, fragment, isAddToStack);
+            customerFragmentManager.replaceFragment(id, fragment, isAddToStack);
         }
     }
 
