@@ -4,7 +4,10 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorGray">#000000</color>
+    <color name="color_black">#000000</color>
     <color name="color_0_f_f">#ff00ffff</color>
     <color name="color_wirte">#ffffffff</color>
     <color name="color_e_e_e">#ffeeeeee</color>
+    <color name="color_3_b_9">#37b69d</color>
+    <color name="color_d_d_d">#ffD5D5D5</color>
 </resources>

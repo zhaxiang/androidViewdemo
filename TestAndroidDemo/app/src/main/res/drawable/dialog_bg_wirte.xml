@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/color_wirte" />
+    <corners android:radius="4dp"></corners>
+    <stroke
+        android:width="2dp"
+        android:color="@color/color_d_d_d">
+
+        <!--dashWidth 值为0时，表示为实线。值大于0则为虚线。-->
+        <!--dashGap 整型 表示描边为虚线时，虚线之间的间隔 即" - - - - "-->
+    </stroke>
+</shape>

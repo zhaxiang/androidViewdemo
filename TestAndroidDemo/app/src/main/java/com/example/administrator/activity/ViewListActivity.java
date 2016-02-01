@@ -11,6 +11,7 @@ import android.widget.Button;
 
 import com.example.administrator.BaseApplication;
 import com.example.administrator.data.Constants;
+import com.example.administrator.dialog.CommonDialog;
 import com.example.administrator.testandroiddemo.R;
 
 /**
@@ -27,6 +28,7 @@ public class ViewListActivity extends AppCompatActivity implements View.OnClickL
     private Button updateApkBtn = null;
     private Button gridviewBtn = null;
     private Button percentLayoutBtn = null;
+    private Button nextBtn = null;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -56,6 +58,9 @@ public class ViewListActivity extends AppCompatActivity implements View.OnClickL
 
         percentLayoutBtn = (Button)findViewById(R.id.percentLayoutBtn);
         percentLayoutBtn.setOnClickListener(this);
+
+        nextBtn = (Button)findViewById(R.id.nextBtn);
+        nextBtn.setOnClickListener(this);
 
 
     }
@@ -103,6 +108,19 @@ public class ViewListActivity extends AppCompatActivity implements View.OnClickL
         {
             Log.v(TAG, "PercentlayoutFragment");
             tagName = Constants.PercentlayoutFragment;
+        }
+        else if(v == nextBtn)
+        {
+            CommonDialog commonDialog = CommonDialog.create(this);
+            commonDialog.setMessage("测试");
+            commonDialog.setCenterBtnClick(new CommonDialog.ButtonClick() {
+                @Override
+                public void onClick() {
+
+                }
+            });
+            commonDialog.show();
+            return;
         }
 
         BaseApplication.application.setFragmentString(tagName);

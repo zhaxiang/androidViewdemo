@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -15,9 +16,7 @@ import android.widget.TextView;
 
 import com.example.administrator.data.AppInfo;
 import com.example.administrator.testandroiddemo.R;
-import com.example.administrator.utils.UtilsMethod;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -78,7 +77,9 @@ public class GridViewAdapter extends BaseAdapter
         }
 
         Log.e("zhaxiang", "parent.width =" + parent.getWidth() / 3);
-        convertView.setLayoutParams(new ViewGroup.LayoutParams((int) (parent.getWidth() / 3),
+
+
+        convertView.setLayoutParams(new GridView.LayoutParams((int) (parent.getWidth() / 3),
                 (int) (parent.getWidth() / 3)));
 
         AppInfo info = infos.get(position);

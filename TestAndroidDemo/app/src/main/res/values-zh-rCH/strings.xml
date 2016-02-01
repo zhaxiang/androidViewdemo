@@ -62,9 +62,6 @@
     <string name="percent_layout">android-percent-support百分比布局演示</string>
     <string name="percent_relative">percent_relative演示</string>
     <string name="percent_linear">percent_linear演示</string>
-    <string name="cancel">取消</string>
-    <string name="confirm">确认</string>
-    <string name="tip">提示</string>
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

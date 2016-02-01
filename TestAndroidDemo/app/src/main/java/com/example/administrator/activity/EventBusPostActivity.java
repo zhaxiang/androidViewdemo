@@ -23,7 +23,7 @@ public class EventBusPostActivity extends BaseActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_bus_post);
 
-        getSupportActionBar().setTitle(R.string.event_bus_demo);
+//        getSupportActionBar().setTitle(R.string.event_bus_demo);
 
         tipText = (TextView)findViewById(R.id.tip);
         testBtn = (Button)findViewById(R.id.testBtn);

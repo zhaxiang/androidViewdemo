@@ -26,8 +26,16 @@ public class SlidingPaneLayoutFragment extends BaseFragment implements SlidingLe
     protected void findViews(View v)
     {
         slidingPaneLayout = (SlidingPaneLayout)v.findViewById(R.id.slidingPaneLayout);
-        slidingLeftFragment = (SlidingLeftFragment)findFragmentById(R.id.leftFragment);
-        slidingRightFragment = (SlidingRightFragment)findFragmentById(R.id.rightFragment);
+
+//        Fragment leftFragment = (Fragment)v.findViewById(R.id.leftFragment);
+        slidingLeftFragment = new SlidingLeftFragment();
+        addFragment(R.id.leftFragment, slidingLeftFragment, false);
+
+        slidingRightFragment = new SlidingRightFragment();
+        addFragment(R.id.rightFragment, slidingRightFragment, false);
+
+//        slidingLeftFragment = (SlidingLeftFragment)findFragmentById(R.id.leftFragment);
+//        slidingRightFragment = (SlidingRightFragment)findFragmentById(R.id.rightFragment);
     }
 
     @Override
@@ -94,7 +102,7 @@ public class SlidingPaneLayoutFragment extends BaseFragment implements SlidingLe
                              Bundle savedInstanceState)
     {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sliding_pane_layout, container, false);
+        return inflater.inflate(R.layout.fragment_sliding_pane_layout, null);
     }
 
     @Override

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_bg_wirte"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp">
+
+        <LinearLayout
+            android:id="@+id/linear_tip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_tip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/color_black"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                android:text="@string/tip"/>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/color_d_d_d"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_below="@+id/linear_tip"
+            android:id="@+id/text_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/color_black"
+            android:layout_marginTop="20dp" />
+
+        <com.example.administrator.view.CustomButton
+            android:layout_below="@+id/text_content"
+            android:id="@+id/leftBtn"
+            android:layout_marginTop="20dp"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:text="@string/cancel"
+            android:textColor="@color/color_wirte"
+            android:background="@drawable/btn_round_3_b_9"/>
+
+        <com.example.administrator.view.CustomButton
+            android:layout_below="@+id/text_content"
+            android:layout_marginTop="20dp"
+            android:id="@+id/centerBtn"
+            android:layout_width="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:text="@string/confirm"
+            android:visibility="invisible"
+            android:textColor="@color/color_wirte"
+            android:background="@drawable/btn_round_3_b_9"/>
+
+        <com.example.administrator.view.CustomButton
+            android:layout_below="@+id/text_content"
+            android:layout_marginTop="20dp"
+            android:id="@+id/rightBtn"
+            android:layout_alignParentRight="true"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:text="@string/confirm"
+            android:textColor="@color/color_wirte"
+            android:background="@drawable/btn_round_3_b_9"/>
+
+
+
+    </RelativeLayout>
+</LinearLayout>

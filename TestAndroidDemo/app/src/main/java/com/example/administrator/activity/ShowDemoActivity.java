@@ -1,15 +1,11 @@
 package com.example.administrator.activity;
 
-import android.app.Activity;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.util.Log;
 
 import com.example.administrator.BaseApplication;
 import com.example.administrator.data.Constants;
-import com.example.administrator.fragment.CustomerFragmentManager;
 import com.example.administrator.fragment.EventBusFragment;
 import com.example.administrator.fragment.GaodeMapFragment;
 import com.example.administrator.fragment.GridViewFragment;
@@ -32,6 +28,13 @@ public class ShowDemoActivity extends BaseActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_demo);
 
+        //初始化actionbar
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_HOME
+                | ActionBar.DISPLAY_SHOW_TITLE | ActionBar.DISPLAY_SHOW_CUSTOM);
+
+
+        //TODO:  getFragmentManager()此方法是minsdk 不小于14时使用，且已经不支持findFragmentById
         initFragment(this, R.id.main_frament, getFragmentManager());
 
         initView();

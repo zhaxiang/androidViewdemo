@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.util.Log;
 
 import com.example.administrator.testandroiddemo.R;
 
@@ -54,18 +55,24 @@ public class CustomerFragmentManager
 
     Activity getFramentContentActivity(){return mActivity;}
 
-    public Fragment findFragmentById(int id)
-    {
-        if(fragmentManager != null)
-            return fragmentManager.findFragmentById(id);
-        return null;
-    }
-
     public void replaceFragment(Fragment fragment, boolean isAddToBack)
     {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        fragmentTransaction.replace(fragmentContent, fragment);
+        Log.e("zhaxiang", "fragment =" + fragment.getClass().getSimpleName());
+        fragmentTransaction.replace(fragmentContent, fragment, fragment.getClass().getSimpleName());
+        if(isAddToBack)
+            fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    };
+
+    //此方法是为给在xml中定义好FrameLayout添加对应布局使用
+    public void addFragment(int id, Fragment fragment, boolean isAddToBack)
+    {
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        Log.e("zhaxiang", "fragment =" + fragment.getClass().getSimpleName());
+        fragmentTransaction.replace(id, fragment, fragment.getClass().getSimpleName());
         if(isAddToBack)
             fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();

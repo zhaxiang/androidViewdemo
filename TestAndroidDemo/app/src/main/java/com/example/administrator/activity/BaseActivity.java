@@ -7,9 +7,12 @@ import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.example.administrator.BaseApplication;
 import com.example.administrator.fragment.CustomerFragmentManager;
+import com.example.administrator.testandroiddemo.R;
 
 public class BaseActivity extends AppCompatActivity
 {
@@ -40,6 +43,37 @@ public class BaseActivity extends AppCompatActivity
     public void replaceFragment(Fragment fragment, boolean isAddToBack)
     {
         customerFragmentManager.replaceFragment(fragment, isAddToBack);
+    }
+
+    public void addFragment(int id, Fragment fragment, boolean isAddToBack)
+    {
+        customerFragmentManager.addFragment(id, fragment, isAddToBack);
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        getMenuInflater().inflate(R.menu.custom_actionbar, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        switch (item.getItemId())
+        {
+            case R.id.menu_settings:
+                Log.e("zhaxaing", "onOptionsItemSelected menu_settings");
+                break;
+
+            case R.id.menu_load:
+                Log.e("zhaxaing", "onOptionsItemSelected menu_load");
+                break;
+        }
+
+
+        return true;
     }
 
     @Override

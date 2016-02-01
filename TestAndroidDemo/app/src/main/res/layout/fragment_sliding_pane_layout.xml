@@ -4,19 +4,19 @@
     tools:context="com.example.administrator.fragment.SlidingPaneLayout.SlidingPaneLayoutFragment"
     android:id="@+id/slidingPaneLayout">
 
-    <fragment
+    <FrameLayout
         android:id="@+id/leftFragment"
         android:layout_width="150dp"
         android:layout_height="match_parent"
         android:name="com.example.administrator.fragment.SlidingPaneLayout.SlidingLeftFragment"
-        ></fragment>
+        ></FrameLayout>
 
-    <fragment
+    <FrameLayout
         android:id="@+id/rightFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:name="com.example.administrator.fragment.SlidingPaneLayout.SlidingRightFragment"
-        ></fragment>
+        ></FrameLayout>
 
 </android.support.v4.widget.SlidingPaneLayout>
