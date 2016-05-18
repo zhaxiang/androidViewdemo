@@ -28,6 +28,9 @@ public class ViewListActivity extends AppCompatActivity implements View.OnClickL
     private Button updateApkBtn = null;
     private Button gridviewBtn = null;
     private Button percentLayoutBtn = null;
+    private Button actionbarBtn = null;
+    private Button datepickerBtn = null;
+    private Button sortListViewBtn = null;
     private Button nextBtn = null;
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -58,6 +61,15 @@ public class ViewListActivity extends AppCompatActivity implements View.OnClickL
 
         percentLayoutBtn = (Button)findViewById(R.id.percentLayoutBtn);
         percentLayoutBtn.setOnClickListener(this);
+
+        actionbarBtn = (Button)findViewById(R.id.actionbarBtn);
+        actionbarBtn.setOnClickListener(this);
+
+        datepickerBtn = (Button)findViewById(R.id.datepickerBtn);
+        datepickerBtn.setOnClickListener(this);
+
+        sortListViewBtn = (Button)findViewById(R.id.sortListViewBtn);
+        sortListViewBtn.setOnClickListener(this);
 
         nextBtn = (Button)findViewById(R.id.nextBtn);
         nextBtn.setOnClickListener(this);
@@ -109,6 +121,23 @@ public class ViewListActivity extends AppCompatActivity implements View.OnClickL
             Log.v(TAG, "PercentlayoutFragment");
             tagName = Constants.PercentlayoutFragment;
         }
+        else if(v == actionbarBtn)
+        {
+            Log.v(TAG, "ActionbarFragment");
+            tagName = Constants.ActionbarFragment;
+        }
+        else if(v == datepickerBtn)
+        {
+            Log.v(TAG, "CalendarFragment");
+            tagName = Constants.CalendarFragment;
+        }
+        else if(v == sortListViewBtn)
+        {
+            Log.v(TAG, "sortListViewBtn");
+            tagName = Constants.SortListViewFragment;
+        }
+
+
         else if(v == nextBtn)
         {
             CommonDialog commonDialog = CommonDialog.create(this);

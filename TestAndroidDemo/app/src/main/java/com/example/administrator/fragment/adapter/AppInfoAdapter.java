@@ -98,7 +98,7 @@ public class AppInfoAdapter extends BaseAdapter
             }
             else
             {
-                infoItem.imageView.setImageResource(R.mipmap.ic_launcher);
+                infoItem.imageView.setImageResource(R.drawable.ic_launcher);
             }
         }
 

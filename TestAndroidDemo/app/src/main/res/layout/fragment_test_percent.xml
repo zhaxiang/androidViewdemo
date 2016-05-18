@@ -24,7 +24,7 @@
             android:layout_height="0dp"
             app:layout_widthPercent="100%"
             app:layout_heightPercent="90%"
-            android:background="@mipmap/default_banner"/>
+            android:background="@drawable/default_banner"/>
     </com.zhy.android.percent.support.PercentLinearLayout>
 
     <com.zhy.android.percent.support.PercentLinearLayout
@@ -53,7 +53,7 @@
                 <ImageView
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:background="@mipmap/park"
+                    android:background="@drawable/park"
                     android:layout_centerHorizontal="true"
                     android:scaleType="fitXY"
                     android:layout_above="@+id/text_tip1"
@@ -90,7 +90,7 @@
                 <ImageView
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:background="@mipmap/park"
+                    android:background="@drawable/park"
                     android:layout_centerHorizontal="true"
                     android:scaleType="fitXY"
                     android:layout_above="@+id/text_tip2"
@@ -128,7 +128,7 @@
                 <ImageView
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:background="@mipmap/park"
+                    android:background="@drawable/park"
                     android:layout_centerHorizontal="true"
                     android:scaleType="fitXY"
                     android:layout_above="@+id/text_tip3"
@@ -178,7 +178,7 @@
                 <ImageView
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:background="@mipmap/park"
+                    android:background="@drawable/park"
                     android:layout_centerHorizontal="true"
                     android:scaleType="fitXY"
                     android:layout_above="@+id/text_tip4"
@@ -214,7 +214,7 @@
                 <ImageView
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:background="@mipmap/park"
+                    android:background="@drawable/park"
                     android:layout_centerHorizontal="true"
                     android:scaleType="fitXY"
                     android:layout_above="@+id/text_tip5"
@@ -251,7 +251,7 @@
                 <ImageView
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:background="@mipmap/park"
+                    android:background="@drawable/park"
                     android:layout_centerHorizontal="true"
                     android:scaleType="fitXY"
                     android:layout_above="@+id/text_tip6"
@@ -300,7 +300,7 @@
                 <ImageView
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:background="@mipmap/park"
+                    android:background="@drawable/park"
                     android:layout_centerHorizontal="true"
                     android:scaleType="fitXY"
                     android:layout_above="@+id/text_tip7"
@@ -336,7 +336,7 @@
                 <ImageView
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:background="@mipmap/park"
+                    android:background="@drawable/park"
                     android:layout_centerHorizontal="true"
                     android:scaleType="fitXY"
                     android:layout_above="@+id/text_tip8"
@@ -373,7 +373,7 @@
                 <ImageView
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:background="@mipmap/park"
+                    android:background="@drawable/park"
                     android:layout_centerHorizontal="true"
                     android:scaleType="fitXY"
                     android:layout_above="@+id/text_tip9"

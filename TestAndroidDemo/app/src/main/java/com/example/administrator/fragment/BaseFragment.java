@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.administrator.actionbar.CustomActionBar;
 import com.example.administrator.activity.BaseActivity;
 
 public abstract class BaseFragment extends Fragment
@@ -24,6 +25,8 @@ public abstract class BaseFragment extends Fragment
     protected abstract void initViews(Bundle var);
 
     protected abstract void initData(Bundle var);
+
+    private CustomActionBar customActionBar = null;
 
     @Override
     public void onAttach(Context context)
@@ -37,6 +40,13 @@ public abstract class BaseFragment extends Fragment
     {
         super.onCreate(savedInstanceState);
         Log.v(TAG, "onCreate");
+
+        customActionBar = ((BaseActivity)this.getActivity()).getCustomActionBar();
+    }
+
+    public CustomActionBar getCustomActionBar()
+    {
+        return customActionBar;
     }
 
     @Nullable
@@ -132,7 +142,7 @@ public abstract class BaseFragment extends Fragment
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-    public void replaceFragment(Fragment fragment, boolean isAddToStack)
+    public void replaceFragment(BaseFragment fragment, boolean isAddToStack)
     {
         if(this.getActivity() == null)
         {
@@ -147,7 +157,7 @@ public abstract class BaseFragment extends Fragment
         }
     }
 
-    public void replaceFragment(int id, Fragment fragment, boolean isAddToStack)
+    public void replaceFragment(int id, BaseFragment fragment, boolean isAddToStack)
     {
         if(this.getActivity() == null)
         {
@@ -162,6 +172,14 @@ public abstract class BaseFragment extends Fragment
         }
     }
 
+    public void onBackPressed()
+    {
+        if(this.getActivity() == null)
+        {
+            throw new IllegalStateException("getActivity is null");
+        }
+        ((BaseActivity)getActivity()).onBackPressed();
+    }
 
     public void popFragment()
     {
@@ -172,6 +190,12 @@ public abstract class BaseFragment extends Fragment
         CustomerFragmentManager customerFragmentManager = ((BaseActivity) this.getActivity()).getCustomerFragmentManager();
         if(null != customerFragmentManager)
             customerFragmentManager.popFragment();
+    }
+
+    public boolean actionbarClickListener(int id) //CustomActionBar.LEFT   CustomActionBar.RIGHT
+    {
+        Log.e(TAG, "actionbarClickListener ");
+        return false;
     }
 
     public void showProgressDialog(int id)

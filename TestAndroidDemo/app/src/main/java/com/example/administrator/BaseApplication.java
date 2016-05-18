@@ -30,7 +30,6 @@ public class BaseApplication extends Application
         super.onCreate();
         Log.v(TAG, "onCreate");
         application = this;
-
         //TODO:
 
         //每个android的进程都会有一个自己的application，因此当启动BaseService时，

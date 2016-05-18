@@ -11,8 +11,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.administrator.BaseApplication;
+import com.example.administrator.actionbar.CustomActionBar;
+import com.example.administrator.fragment.BaseFragment;
 import com.example.administrator.fragment.CustomerFragmentManager;
 import com.example.administrator.testandroiddemo.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class BaseActivity extends AppCompatActivity
 {
@@ -25,11 +30,28 @@ public class BaseActivity extends AppCompatActivity
 
     private CustomerFragmentManager customerFragmentManager = null;
 
+    private CustomActionBar customActionBar = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+
+        customActionBar = new CustomActionBar(this.getSupportActionBar());
+        customActionBar.setCustomActionBarListener(new CustomActionBar.ActionbarClickListener()
+        {
+            @Override
+            public void onClick(int v)
+            {
+                if(v == CustomActionBar.RIGHT)
+                {
+
+                }
+            }
+        });
     }
+
+
 
     //TODO:在onCreate中调用
     public void initFragment(Activity activity, int contentId, FragmentManager fragmentManager)
@@ -40,40 +62,19 @@ public class BaseActivity extends AppCompatActivity
         }
     }
 
-    public void replaceFragment(Fragment fragment, boolean isAddToBack)
+    public void replaceFragment(BaseFragment fragment, boolean isAddToBack)
     {
         customerFragmentManager.replaceFragment(fragment, isAddToBack);
     }
 
-    public void replaceFragment(int id, Fragment fragment, boolean isAddToBack)
+    public void replaceFragment(int id, BaseFragment fragment, boolean isAddToBack)
     {
         customerFragmentManager.replaceFragment(id, fragment, isAddToBack);
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu)
+    public CustomActionBar getCustomActionBar()
     {
-        getMenuInflater().inflate(R.menu.custom_actionbar, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        switch (item.getItemId())
-        {
-            case R.id.menu_settings:
-                Log.e("zhaxaing", "onOptionsItemSelected menu_settings");
-                break;
-
-            case R.id.menu_load:
-                Log.e("zhaxaing", "onOptionsItemSelected menu_load");
-                break;
-        }
-
-
-        return true;
+        return customActionBar;
     }
 
     @Override

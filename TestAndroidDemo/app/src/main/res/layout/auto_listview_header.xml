@@ -11,7 +11,7 @@
             android:id="@+id/arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@mipmap/pull_arrow"/>
+            android:background="@drawable/pull_arrow"/>
         <TextView
             android:layout_margin="5dip"
             android:id="@+id/tip"
@@ -23,7 +23,7 @@
             android:id="@+id/lastUpdate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="lastUpdate"/>/>
+            android:text="lastUpdate"/>
         <ProgressBar
             android:id="@+id/refreshing"
             android:layout_width="wrap_content"

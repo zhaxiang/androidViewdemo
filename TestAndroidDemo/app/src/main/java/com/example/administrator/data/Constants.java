@@ -6,7 +6,10 @@ package com.example.administrator.data;
 public class Constants
 {
     public static final int BITMAP_CACHE_SIZE = 20;
+    public static final String DOWNLOAD_FILE_NAME = "p_share_download";
     public static final String DOWNLOAD_APK_NAME = "testAndroid.apk";
+    public static final String DOWNLOAD_NAME_ID = "download_name_id";
+    public static final String DOWNLOAD_INFO = "download_info";
     //测试url
     public static String[] imageUrl = {"" +
             "http://img1.3lian.com/img2011/w10/1019/5/10.jpg",
@@ -27,6 +30,9 @@ public class Constants
     public static final String UpdateApkFragment = "UpdateApkFragment";
     public static final String GridViewFragment = "GridViewFragment";
     public static final String PercentlayoutFragment = "PercentlayoutFragment";
+    public static final String ActionbarFragment = "ActionbarFragment";
+    public static final String CalendarFragment = "CalendarFragment";
+    public static final String SortListViewFragment = "SortListViewFragment";
     public static final int POI_SEARCH_NUM = 10;//地图poi搜索每页搜索显示个数
     public static final String FRAGMENT_LIST[] = {ListFragment, VolleyFragment};
 }

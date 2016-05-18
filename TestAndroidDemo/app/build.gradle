@@ -23,12 +23,15 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.1.1'
     compile files('libs/volley.jar')
     compile files('libs/AMap_Location_v2.0.0_20151117.jar')
     compile files('libs/AMap_Android_3DMapSDK_V3.1.1_20151216.jar')
     compile files('libs/AMap_Services_V2.7.0_20151125.jar')
+    //    compile 'com.android.support:percent:23.1.1'  android.support.percent.PercentRelativeLayout  app:layout_marginLeftPercent
+    //http://blog.csdn.net/lmj623565791/article/details/46767825
+    compile project(':DatePicker')
+    compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'de.greenrobot:eventbus:2.4.0'
-//    compile 'com.android.support:percent:23.1.1'  android.support.percent.PercentRelativeLayout  app:layout_marginLeftPercent
-    compile 'com.zhy:percent-support-extends:1.0.1' //http://blog.csdn.net/lmj623565791/article/details/46767825
+    compile 'com.zhy:percent-support-extends:1.0.1'
+    compile 'com.android.support:support-v4:23.1.1'
 }

@@ -13,6 +13,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.administrator.BaseApplication;
+import com.example.administrator.actionbar.CustomActionBar;
 import com.example.administrator.data.AppInfo;
 import com.example.administrator.fragment.adapter.AppInfoAdapter;
 import com.example.administrator.testandroiddemo.R;
@@ -146,6 +147,19 @@ public class ListDemoFragment extends BaseFragment
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+
+        getCustomActionBar().setLeftImage(R.drawable.leftarrow);
+        getCustomActionBar().setCustomActionBarListener(new CustomActionBar.ActionbarClickListener()
+        {
+            @Override
+            public void onClick(int v)
+            {
+                if(v == CustomActionBar.LEFT)
+                {
+                    onBackPressed();
+                }
+            }
+        });
     }
 
     @Nullable

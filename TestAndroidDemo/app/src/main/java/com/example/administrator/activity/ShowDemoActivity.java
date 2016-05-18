@@ -5,12 +5,16 @@ import android.support.v7.app.ActionBar;
 import android.util.Log;
 
 import com.example.administrator.BaseApplication;
+import com.example.administrator.actionbar.CustomActionBar;
 import com.example.administrator.data.Constants;
+import com.example.administrator.fragment.ActionbarFragment;
+import com.example.administrator.fragment.CalendarFragment;
 import com.example.administrator.fragment.EventBusFragment;
 import com.example.administrator.fragment.GaodeMapFragment;
 import com.example.administrator.fragment.GridViewFragment;
 import com.example.administrator.fragment.PercentlayoutFragment;
 import com.example.administrator.fragment.SlidingPaneLayout.SlidingPaneLayoutFragment;
+import com.example.administrator.fragment.SortListViewFragment;
 import com.example.administrator.fragment.UpdateApkFragment;
 import com.example.administrator.fragment.VolleyFragment;
 import com.example.administrator.testandroiddemo.R;
@@ -27,12 +31,6 @@ public class ShowDemoActivity extends BaseActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_demo);
-
-        //初始化actionbar
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_HOME
-                | ActionBar.DISPLAY_SHOW_TITLE | ActionBar.DISPLAY_SHOW_CUSTOM);
-
 
         //TODO:  getFragmentManager()此方法是minsdk 不小于14时使用，且已经不支持findFragmentById
         initFragment(this, R.id.main_frament, getFragmentManager());
@@ -86,7 +84,23 @@ public class ShowDemoActivity extends BaseActivity
             showPercentLayoutFragment();
         }
 
-        this.getSupportActionBar().setTitle(titleId);
+        else if(currentFragment == Constants.ActionbarFragment)
+        {
+            titleId = R.string.actionbar_custom_test;
+            showActionbarFragment();
+        }
+        else if(currentFragment == Constants.CalendarFragment)
+        {
+            titleId = R.string.date_picker;
+            showCalendarFragment();
+        }
+        else if(currentFragment == Constants.SortListViewFragment)
+        {
+            titleId = R.string.sort_list_view;
+            showSortListViewFragment();
+        }
+
+        getCustomActionBar().setTitle(titleId);
     }
 
     private void showListFragment()
@@ -133,6 +147,23 @@ public class ShowDemoActivity extends BaseActivity
     {
         Log.v(TAG, "showPercentLayoutFragment");
         replaceFragment(new PercentlayoutFragment(), false);
+    }
+
+    private void showActionbarFragment()
+    {
+        Log.v(TAG, "showActionbarFragment");
+        replaceFragment(new ActionbarFragment(), false);
+    }
+
+    private void showCalendarFragment()
+    {
+        Log.v(TAG, "showCalendarFragment");
+        replaceFragment(new CalendarFragment(), false);
+    }
+    private void showSortListViewFragment()
+    {
+        Log.v(TAG, "showSortListViewFragment");
+        replaceFragment(new SortListViewFragment(), false);
     }
 
     @Override

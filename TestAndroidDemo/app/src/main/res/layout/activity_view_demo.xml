@@ -63,11 +63,31 @@
             android:layout_below="@+id/gridviewBtn"/>
 
         <Button
+            android:id="@+id/actionbarBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/actionbar_custom_test"
+            android:layout_below="@+id/percentLayoutBtn"/>
+
+        <Button
+            android:id="@+id/datepickerBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/date_picker"
+            android:layout_below="@+id/actionbarBtn"/>
+        <Button
+            android:id="@+id/sortListViewBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sort_list_view"
+            android:layout_below="@+id/datepickerBtn"/>
+
+        <Button
             android:id="@+id/nextBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="next_null"
-            android:layout_below="@+id/percentLayoutBtn"/>
+            android:layout_below="@+id/sortListViewBtn"/>
     </RelativeLayout>
 </ScrollView>
 </RelativeLayout>
