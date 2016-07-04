@@ -10,8 +10,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.administrator.BaseApplication;
-import com.example.administrator.data.Constants;
-import com.example.administrator.data.MyVolleyListener;
+import com.example.administrator.data.StringObj;
+import com.example.administrator.utils.Constants;
+import com.example.administrator.volley.MyVolleyListener;
 import com.example.administrator.data.Weather;
 import com.example.administrator.testandroiddemo.R;
 
@@ -58,9 +59,13 @@ public class VolleyFragment extends BaseFragment
             {
                 BaseApplication.application.getVolleyManager().XMLRequest(Constants.testUrl, new MyVolleyListener<Weather>() {
                     @Override
-                    public void myVolleyListener(int result, Weather a)
-                    {
-                        if (result == 0)
+                    public void onStart() {
+
+                    }
+
+                    @Override
+                    public void onResult(String code, String message, Weather a) {
+                        if(code.equals("0"))
                         {
                             responseText.setText(a.weatherToString());
                         }
@@ -69,6 +74,7 @@ public class VolleyFragment extends BaseFragment
                             responseText.setText("response fail!");
                         }
                     }
+
                 });
             }
         });
@@ -78,11 +84,16 @@ public class VolleyFragment extends BaseFragment
             @Override
             public void onClick(View v)
             {
-                BaseApplication.application.getVolleyManager().JsonObjectRequest(Constants.testJsonUrl, new MyVolleyListener<String>() {
+                BaseApplication.application.getVolleyManager().JsonObjectRequest(Constants.testJsonUrl, new MyVolleyListener<StringObj>() {
                     @Override
-                    public void myVolleyListener(int result, String a)
-                    {
-                        responseText.setText(a);
+                    public void onStart() {
+
+                    }
+
+                    @Override
+                    public void onResult(String code, String message, StringObj a) {
+                        if(a != null)
+                        responseText.setText(a.getContent());
                     }
                 });
             }
