@@ -1,5 +1,6 @@
 package com.example.administrator.fragment;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -24,8 +25,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.amap.api.location.AMapLocation;
-import com.amap.api.location.AMapLocationClient;
-import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.AMapLocationListener;
 import com.amap.api.maps.AMap;
 import com.amap.api.maps.AMapOptions;
@@ -47,7 +46,7 @@ import com.amap.api.services.poisearch.PoiSearch;
 import com.amap.api.services.poisearch.PoiSearch.OnPoiSearchListener;
 import com.example.administrator.BaseApplication;
 import com.example.administrator.activity.BaseActivity;
-import com.example.administrator.data.Constants;
+import com.example.administrator.utils.Constants;
 import com.example.administrator.testandroiddemo.R;
 
 import java.net.URISyntaxException;
@@ -92,6 +91,8 @@ public class GaodeMapFragment extends BaseFragment implements LocationSource, AM
     private Button nextPageBtn;
 
     private int currentPage = 0;
+
+    private ProgressDialog progressDialog;
 
     @Override
     protected void findViews(View v)
@@ -190,6 +191,7 @@ public class GaodeMapFragment extends BaseFragment implements LocationSource, AM
         {
             if(aMapLocation != null)
             {
+                aMapLocation.get
                 if(aMapLocation.getErrorCode() == 0)
                 {
                     mListener.onLocationChanged(aMapLocation);// 显示系统小蓝点
@@ -249,7 +251,8 @@ public class GaodeMapFragment extends BaseFragment implements LocationSource, AM
     @Override
     public void onPoiSearched(PoiResult poiResult, int i)
     {
-        this.dismissProgressDialog();// 显示进度框
+        if(progressDialog != null)
+            progressDialog.dismiss();// 显示进度框
         if(i == 0)
         {
             if(null != poiResult && null !=poiResult.getQuery())
@@ -319,10 +322,10 @@ public class GaodeMapFragment extends BaseFragment implements LocationSource, AM
 
     private void doSearchPoi()
     {
-        this.showProgressDialog(R.string.loading);// 显示进度框
+        progressDialog = this.showProgressDialog(R.string.loading);// 显示进度框
         if(cityET.getText().toString().equals("") || keywordET.getText().toString().equals(""))
         {
-            this.dismissProgressDialog();
+            progressDialog.dismiss();
             BaseApplication.application.showToast(R.string.edit_null);
             return;
         }

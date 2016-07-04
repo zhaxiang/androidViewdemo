@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.administrator.BaseApplication;
-import com.example.administrator.data.Constants;
+import com.example.administrator.utils.Constants;
 import com.example.administrator.dialog.CommonDialog;
 import com.example.administrator.testandroiddemo.R;
 

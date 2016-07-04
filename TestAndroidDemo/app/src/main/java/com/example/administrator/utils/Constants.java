@@ -1,4 +1,4 @@
-package com.example.administrator.data;
+package com.example.administrator.utils;
 
 /**
  * Created by Administrator on 2015/12/9.

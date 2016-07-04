@@ -3,6 +3,7 @@ package com.example.administrator.fragment;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -198,25 +199,20 @@ public abstract class BaseFragment extends Fragment
         return false;
     }
 
-    public void showProgressDialog(int id)
+    public ProgressDialog showProgressDialog(int id)
     {
-        ((BaseActivity)this.getActivity()).showProgressDialog(id);
+        return ((BaseActivity)this.getActivity()).showProgressDialog(id);
     }
 
-//    public void showProgressDialog(String text)
-//    {
-//        ((BaseActivity)this.getActivity()).showProgressDialog(text);
-//    }
+    public ProgressDialog showProgressDialog(String text)
+    {
+        return ((BaseActivity)this.getActivity()).showProgressDialog(text);
+    }
 //
 //    public void showProgressDialog(int id, String text)
 //    {
 //
 //    }
-
-    public void dismissProgressDialog()
-    {
-        ((BaseActivity)this.getActivity()).dissmissProgressDialog();
-    }
 
     public void showToast(int id)
     {

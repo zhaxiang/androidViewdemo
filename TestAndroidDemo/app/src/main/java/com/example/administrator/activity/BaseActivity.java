@@ -101,25 +101,28 @@ public class BaseActivity extends AppCompatActivity
     /**
      * 显示进度框
      */
-    public void showProgressDialog(int id)
+    public ProgressDialog showProgressDialog(int id)
     {
-        if (progDialog == null)
-            progDialog = new ProgressDialog(this);
+        ProgressDialog  progDialog = new ProgressDialog(this);
         progDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progDialog.setIndeterminate(false);
         progDialog.setCancelable(false);
         progDialog.setMessage(this.getResources().getString(id));
         progDialog.show();
+
+        return  progDialog;
     }
 
-    /**
-     * 隐藏进度框
-     */
-    public void dissmissProgressDialog()
+    public ProgressDialog showProgressDialog(String id)
     {
-        if (progDialog != null) {
-            progDialog.dismiss();
-        }
+        ProgressDialog  progDialog = new ProgressDialog(this);
+        progDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progDialog.setIndeterminate(false);
+        progDialog.setCancelable(false);
+        progDialog.setMessage(id);
+        progDialog.show();
+
+        return  progDialog;
     }
 
     public void showToast(int id)

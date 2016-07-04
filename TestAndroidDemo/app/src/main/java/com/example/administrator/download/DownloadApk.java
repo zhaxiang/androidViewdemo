@@ -13,7 +13,7 @@ import android.os.Environment;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.example.administrator.data.Constants;
+import com.example.administrator.utils.Constants;
 
 import java.io.File;
 import java.io.IOException;
@@ -30,7 +30,6 @@ public class DownloadApk
     private static DownloadApk mDownloadApk = null;
     private DownloadListener mListener;
     private DownloadManager downManager;
-    private DownLoadCompleteReceiver receiver;
     private Context mContext;
     private long totalSize = -1;
     private ScheduledExecutorService scheduledExecutorService;
@@ -51,15 +50,6 @@ public class DownloadApk
     {
         mContext = context;
         downManager = (DownloadManager)mContext.getSystemService(Context.DOWNLOAD_SERVICE);
-
-//        if(null != receiver)
-//            mContext.unregisterReceiver(receiver);
-//
-//        IntentFilter filter = new IntentFilter();
-//        filter.addAction(DownloadManager.ACTION_DOWNLOAD_COMPLETE);
-//        filter.addAction(DownloadManager.ACTION_NOTIFICATION_CLICKED);
-//        receiver = new DownLoadCompleteReceiver();
-//        mContext.registerReceiver(receiver, filter);
     }
 
     public void removeDownloadApk()
@@ -99,8 +89,8 @@ public class DownloadApk
         //不显示下载界面
         request.setVisibleInDownloadsUi(false);
         //设置文件存放目录
-        request.setDestinationInExternalPublicDir(Constants.DOWNLOAD_FILE_NAME, Constants.DOWNLOAD_APK_NAME);
-
+//        request.setDestinationInExternalPublicDir(Constants.DOWNLOAD_FILE_NAME, Constants.DOWNLOAD_APK_NAME);
+        request.setDestinationInExternalFilesDir(mContext, Constants.DOWNLOAD_FILE_NAME, Constants.DOWNLOAD_APK_NAME);
         final long currentTaskId = downManager.enqueue(request);
         SharedPreferences sharedPreferences = mContext.getSharedPreferences(Constants.DOWNLOAD_INFO, Activity.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -148,51 +138,6 @@ public class DownloadApk
 
     }
 
-//    public class DownLoadCompleteReceiver extends BroadcastReceiver
-//    {
-//        @Override
-//        public void onReceive(Context context, Intent intent) {
-//            Log.e(TAG, "DownLoadCompleteReceiver");
-//            if(intent.getAction().equals(DownloadManager.ACTION_DOWNLOAD_COMPLETE))
-//            {
-//                long id = intent.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1);
-//                Log.e(TAG, "DownLoadCompleteReceiver id = " + id);
-//                long currnetId = mContext.getSharedPreferences(Constants.DOWNLOAD_INFO, Activity.MODE_PRIVATE).getLong(Constants.DOWNLOAD_NAME_ID, -1);
-//                Log.e(TAG, "DownLoadCompleteReceiver currnetId = " + currnetId);
-//                if(id == currnetId)
-//                {
-//                    if(scheduledExecutorService != null)
-//                    {
-//                        Log.e(TAG, "DownLoadCompleteReceiver scheduledExecutorService != null");
-//                        scheduledExecutorService.shutdown();
-//                     }
-//                    if(null != mListener)
-//                    {
-//                        Log.e(TAG, "DownLoadCompleteReceiver mListener");
-//                        mListener.progress(totalSize, totalSize);
-//                        mListener.success();
-//                        String apkFilePath = new StringBuilder(Environment
-//                                .getExternalStorageDirectory().getAbsolutePath())
-//                                .append(File.separator)
-//                                .append(Constants.DOWNLOAD_FILE_NAME)
-//                                .append(File.separator).append(Constants.DOWNLOAD_APK_NAME)
-//                                .toString();
-//                        Log.e(TAG, "DownLoadCompleteReceiver apkFilePath =" + apkFilePath);
-//                        installApk(apkFilePath);
-//                    }
-//                }
-//
-//                Toast.makeText(mContext, "编号：" + id + "的下载任务已经完成！", Toast.LENGTH_SHORT).show();
-//            }
-//            else if(intent.getAction().equals(DownloadManager.ACTION_NOTIFICATION_CLICKED))
-//            {
-//                Toast.makeText(mContext, "别瞎点！！！", Toast.LENGTH_SHORT).show();
-//            }
-//        }
-//
-//
-//    }
-
     private void installApk(String filePath)
     {
         if(null != filePath)
@@ -236,8 +181,15 @@ public class DownloadApk
             Log.e(TAG, "DownLoadCompleteReceiver mListener");
             mListener.progress(totalSize, totalSize);
             mListener.success();
-            String apkFilePath = new StringBuilder(Environment
-                    .getExternalStorageDirectory().getAbsolutePath())
+            //            String apkFilePath = new StringBuilder(Environment
+//                    .getExternalStorageDirectory().getAbsolutePath())
+//                    .append(File.separator)
+//                    .append(ConstantsNew.DOWNLOAD_FILE_NAME)
+//                    .append(File.separator).append(ConstantsNew.DOWNLOAD_APK_NAME)
+//                    .toString();
+
+            String apkFilePath = new StringBuilder(mContext
+                    .getExternalFilesDir(null).getAbsolutePath())
                     .append(File.separator)
                     .append(Constants.DOWNLOAD_FILE_NAME)
                     .append(File.separator).append(Constants.DOWNLOAD_APK_NAME)

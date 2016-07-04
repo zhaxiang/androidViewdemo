@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.administrator.data.Constants;
+import com.example.administrator.utils.Constants;
 import com.example.administrator.data.EventBusCustomData;
 import com.example.administrator.testandroiddemo.R;
 

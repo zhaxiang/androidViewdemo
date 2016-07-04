@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import com.example.administrator.BaseApplication;
 import com.example.administrator.data.AppInfo;
-import com.example.administrator.data.Constants;
+import com.example.administrator.utils.Constants;
 import com.example.administrator.fragment.adapter.AppInfoAdapter;
 import com.example.administrator.testandroiddemo.R;
 import com.example.administrator.view.AutoListView;

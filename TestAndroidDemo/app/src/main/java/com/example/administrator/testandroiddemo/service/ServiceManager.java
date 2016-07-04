@@ -107,6 +107,7 @@ public class ServiceManager
             Log.v(TAG, "mLocalConnection onServiceDisconnected");
             isLocalBind = false;
             mLocalService = null;
+            bindLocalService();
         }
     };
 
