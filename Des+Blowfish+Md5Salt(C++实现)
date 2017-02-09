@@ -1,0 +1,1 @@
+此demo演示了des+blowfish 的加密和解密  md5Salt加密  统一调用接口为JniUtils.encryptionString加密  JniUtils.decryptionString解密
